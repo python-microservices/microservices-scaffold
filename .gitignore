@@ -104,3 +104,4 @@ ENV/
 
 pylintReport.txt
 db.sqlite3
+_build

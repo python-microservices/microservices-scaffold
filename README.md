@@ -21,3 +21,12 @@ Test the image:
 Push to Kubernetes:
 
     kubectl create -f service.yaml
+    
+    
+## How to contrib
+
+TODO
+
+### Update docs
+
+   sphinx-build -b html docs/ _build
