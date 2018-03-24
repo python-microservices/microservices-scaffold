@@ -1,0 +1,5 @@
+[run]
+include=
+    *project/*
+omit =
+    venv/*
