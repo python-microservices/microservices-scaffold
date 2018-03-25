@@ -21,5 +21,6 @@ Content
 
    installation
    quickstart
+   structure
    configuration
    codeexample
