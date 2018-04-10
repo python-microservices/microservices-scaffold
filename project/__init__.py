@@ -4,6 +4,8 @@ import os
 
 from flasgger import Swagger
 from flask import Flask
+from flask_opentracing import FlaskTracer
+from jaeger_client import Config
 
 from project.config import CONFIG
 
@@ -45,6 +47,13 @@ SWAGGER_CONFIG = {
 }
 
 
+def init_jaeger_tracer(service_name='your-app-name'):
+    config = Config(config={
+        'sampler': {'type': 'const', 'param': 1}
+    }, service_name=service_name)
+    return config.initialize_tracer()
+
+
 class PrefixMiddleware(object):
 
     def __init__(self, app, prefix=''):
@@ -72,6 +81,9 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(CONFIG[environment])
     app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix=app.config["APPLICATION_ROOT"])
+
+    j_tracer = init_jaeger_tracer(app.config["APP_NAME"])
+    FlaskTracer(j_tracer, True, app)
 
     db.init_app(app)
 
