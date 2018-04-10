@@ -52,10 +52,11 @@ class PrefixMiddleware(object):
         self.prefix = prefix
 
     def __call__(self, environ, start_response):
-
         if environ['PATH_INFO'].startswith(self.prefix):
             environ['PATH_INFO'] = environ['PATH_INFO'][len(self.prefix):]
             environ['SCRIPT_NAME'] = self.prefix
+            return self.app(environ, start_response)
+        elif environ['PATH_INFO'].startswith("/healthcheck"):
             return self.app(environ, start_response)
         else:
             start_response('404', [('Content-Type', 'text/plain')])
@@ -65,6 +66,7 @@ class PrefixMiddleware(object):
 def create_app():
     from project.models import db
     from project.views import views_bp as views_blueprint
+    from project.views import views_hc as views_hc_blueprint
     environment = os.environ.get("ENVIRONMENT", "default")
 
     app = Flask(__name__)
@@ -88,6 +90,7 @@ def create_app():
     Swagger(app, config=SWAGGER_CONFIG)
 
     app.register_blueprint(views_blueprint)
+    app.register_blueprint(views_hc_blueprint)
     with app.test_request_context():
         db.create_all()
     return app, db
