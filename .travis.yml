@@ -5,7 +5,7 @@ python:
     - '3.6'
 
 install:
-  - pip install -U tox coveralls
+  - pip install -rrequirements-tests.txt
 
 script:
   - coverage erase
