@@ -1,10 +1,7 @@
 #!/bin/sh
-pip install -r requirements-tests.txt
 coverage erase
-coverage run -m unittest
+tox
 coverage combine
 coverage report -m
-coverage xml -i
-coverage html -i
-# --rcfile=pylintrc
+coverage html
 pylint project/* > pylintReport.txt
