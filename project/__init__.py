@@ -95,8 +95,10 @@ def create_app():
     app.config.from_object(CONFIG[environment])
     app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix=app.config["APPLICATION_ROOT"])
 
-    j_tracer = init_jaeger_tracer(app.config["APP_NAME"])
-    FlaskTracer(j_tracer, True, app)
+
+    if not app.config["TESTING"] and not app.config["DEBUG"]:
+        j_tracer = init_jaeger_tracer(app.config["APP_NAME"])
+        FlaskTracer(j_tracer, True, app)
 
     db.init_app(app)
 
