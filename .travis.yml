@@ -3,15 +3,9 @@ sudo: false
 cache: false
 python:
     - '3.6'
-addons:
-  apt:
-    sources:
-      - deadsnakes
-    packages:
-    - python3.5
-    - python3.5-dev
+
 install:
-  - pip install -U tox coveralls
+  - pip install -rrequirements-tests.txt
 
 script:
   - coverage erase
