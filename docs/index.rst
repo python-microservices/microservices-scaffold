@@ -24,3 +24,4 @@ Content
    structure
    configuration
    codeexample
+   project
