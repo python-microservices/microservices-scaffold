@@ -4,5 +4,6 @@ from __future__ import unicode_literals, print_function, absolute_import, divisi
 from flask import Blueprint
 
 views_bp = Blueprint('views', __name__, static_url_path='/static')
+views_hc = Blueprint('healthcheck', __name__, static_url_path='/static')
 
-from project.views import views
+from project.views import views, healthcheck
