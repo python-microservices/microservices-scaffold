@@ -3,12 +3,13 @@ sudo: false
 cache: false
 python:
     - '3.6'
+
 install:
-  - pip install -r requirements-tests.txt
+  - pip install -rrequirements-tests.txt
 
 script:
   - coverage erase
-  - coverage run -m  unittest
+  - tox
 after_success:
   - coverage combine
   - coveralls

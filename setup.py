@@ -36,6 +36,7 @@ setup(
     platforms=["any"],
     keywords="python, microservices",
     url='https://github.com/python-microservices/microservices-scaffold',
+    test_suite='nose.collector',
     packages=find_packages(),
-    zip_safe=True,
+    include_package_data=True,
 )
