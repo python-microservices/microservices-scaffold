@@ -1,5 +1,6 @@
 [run]
 include=
     *project/*
+    *pyms/*
 omit =
     venv/*

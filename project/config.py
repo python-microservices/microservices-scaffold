@@ -28,7 +28,6 @@ class DevConfig(Config):
     """Configuration to run in local environments"""
 
     DEBUG = True
-    TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, "db.sqlite3")
 
 
