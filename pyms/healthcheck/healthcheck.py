@@ -7,8 +7,6 @@ from pyms.healthcheck import healthcheck_blueprint
 
 @healthcheck_blueprint.route('/healthcheck', methods=['GET'])
 def healthcheck(tracer: FlaskTracer):
-    # tracer = ftracer._tracer
-    # import ipdb; ipdb.set_trace()
     span = tracer.get_span()
     headers = {}
     tracer._tracer.inject(span, opentracing.Format.HTTP_HEADERS, headers)

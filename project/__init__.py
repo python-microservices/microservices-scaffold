@@ -10,7 +10,7 @@ from injector import Injector
 from project.config import CONFIG
 from pyms.healthcheck import healthcheck_blueprint
 from pyms.models import db
-from pyms.tracer.main import ProjectTracer
+from pyms.tracer.main import TracerModule
 
 __author__ = "Alberto Vara"
 __email__ = "a.vara.1986@gmail.com"
@@ -107,9 +107,10 @@ def create_app():
     app.register_blueprint(views_blueprint)
     app.register_blueprint(healthcheck_blueprint)
 
-    # Initialize Blueprints
-    injector = Injector([ProjectTracer(app)])
-    FlaskInjector(app=app, injector=injector)
+    # Inject Modules
+    if not app.config["TESTING"] and not app.config["DEBUG"]:
+        injector = Injector([TracerModule(app)])
+        FlaskInjector(app=app, injector=injector)
 
     with app.test_request_context():
         db.create_all()

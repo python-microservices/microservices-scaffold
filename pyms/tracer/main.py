@@ -1,4 +1,3 @@
-import opentracing
 from flask_opentracing import FlaskTracer
 from injector import Module
 from jaeger_client import Config
@@ -16,12 +15,10 @@ def init_jaeger_tracer(service_name='your-app-name'):
     return config.initialize_tracer()
 
 
-class ProjectTracer(Module):
+class TracerModule(Module):
     def __init__(self, app):
         self.app = app
 
     def configure(self, binder):
-        # We configure the DB here, explicitly, as Flask-SQLAlchemy requires
-        # the DB to be configured before request handlers are called.
         tracer = init_jaeger_tracer(self.app.config["APP_NAME"])
         binder.bind(FlaskTracer, to=FlaskTracer(tracer, True, self.app))
