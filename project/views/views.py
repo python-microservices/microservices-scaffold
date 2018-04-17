@@ -3,7 +3,8 @@ from __future__ import absolute_import, print_function, unicode_literals
 
 from flask import request, jsonify
 
-from project.models.models import db, Colors
+from pyms.models import db
+from project.models.models import Colors
 from project.views import views_bp
 
 

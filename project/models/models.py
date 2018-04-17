@@ -5,7 +5,7 @@ import datetime
 
 from sqlalchemy import Column, Integer, String, DateTime
 
-from project.models import db
+from pyms.models import db
 
 
 def dump_datetime(value: datetime) -> list:
