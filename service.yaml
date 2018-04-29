@@ -1,6 +1,5 @@
-# interno
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: template
 spec:
@@ -8,23 +7,10 @@ spec:
     app: template
   ports:
   - protocol: TCP
-    port: 80
+    port: 5000
     targetPort: 5000
----
-# externo
-apiVersion: v1
-kind: Service
-metadata:
-  name: template-external
-spec:
-  ports:
-  - port: 80
-    targetPort: 5000
-  selector:
-    app: template
   type: LoadBalancer
-  loadBalancerSourceRanges:
-  - 62.82.24.134/32
+  externalTrafficPolicy: "Local"
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -39,7 +25,16 @@ spec:
     spec:
       containers:
         - name: template
-          image: template:latest
+          image: template:v1
           ports:
             - name: http
               containerPort: 5000
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+spec:
+  backend:
+    serviceName: template
+    servicePort: 5000

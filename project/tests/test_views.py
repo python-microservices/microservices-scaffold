@@ -10,7 +10,7 @@ def _format_response(response: Text = "") -> Union[List, Dict]:
     return json.loads(response)
 
 
-class FlaskrTestCase(unittest.TestCase):
+class ProjectTestCase(unittest.TestCase):
 
     def setUp(self):
         os.environ["ENVIRONMENT"] = "test"
