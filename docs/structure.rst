@@ -14,6 +14,8 @@ You have a project with this structure:
    myms
    ├ healthcheck
    │ └ healthcheck.py
+   ├ logger
+   │ └ logger.py
    ├ models
    │ └ __init__.py
    └ tracer
@@ -51,6 +53,10 @@ Common Structure
 myms/healthcheck/healthcheck.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This views is usually used by Kubernetes, Eureka and other systems to check if our application is up and running
+
+myms/logger/logger.py
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Print logger in JSON format to send to server like Elasticsearch. Inject span traces in logger
 
 myms/models/__init__.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
