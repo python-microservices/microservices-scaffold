@@ -10,15 +10,18 @@ def init_jaeger_tracer(service_name='your-app-name'):
     :return: opentracing.Tracer
     """
     config = Config(config={
+        # 'propagation': 'b3',
         'sampler': {'type': 'const', 'param': 1}, 'logging': True,
     }, service_name=service_name)
     return config.initialize_tracer()
 
 
 class TracerModule(Module):
+    tracer = ""
+
     def __init__(self, app):
         self.app = app
 
     def configure(self, binder):
-        tracer = init_jaeger_tracer(self.app.config["APP_NAME"])
-        binder.bind(FlaskTracer, to=FlaskTracer(tracer, True, self.app))
+        self.tracer = FlaskTracer(init_jaeger_tracer(self.app.config["APP_NAME"]), True, self.app)
+        binder.bind(FlaskTracer, to=self.tracer)
