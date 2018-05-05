@@ -25,6 +25,10 @@ class FlaskrTestCase(unittest.TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 404)
 
+    def test_healthcheck(self):
+        response = self.client.get('/healthcheck')
+        self.assertEqual(response.status_code, 200)
+
     def test_list_view(self):
         response = self.client.get('{base_url}/'.format(base_url=self.base_url))
         self.assertEqual(response.status_code, 200)

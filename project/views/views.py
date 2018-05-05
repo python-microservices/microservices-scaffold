@@ -1,7 +1,7 @@
 # encoding: utf-8
 from __future__ import absolute_import, print_function, unicode_literals
 
-from flask import request, jsonify
+from flask import request, jsonify, current_app
 
 from pyms.models import db
 from project.models.models import Colors
@@ -57,7 +57,7 @@ def list_view():
             ]
           }]
     """
-
+    current_app.logger.info("Return all color list")
     query = Colors.query.all()
 
     return jsonify([i.serialize for i in query])
@@ -107,6 +107,7 @@ def create_view():
             ]
           }
     """
+    current_app.logger.info("Create color")
     color = Colors(name=request.form["name"])
     db.session.add(color)
     db.session.commit()
