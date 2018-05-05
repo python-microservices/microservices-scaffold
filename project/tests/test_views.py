@@ -10,7 +10,7 @@ def _format_response(response: Text = "") -> Union[List, Dict]:
     return json.loads(response)
 
 
-class FlaskrTestCase(unittest.TestCase):
+class ProjectTestCase(unittest.TestCase):
 
     def setUp(self):
         os.environ["ENVIRONMENT"] = "test"
@@ -24,6 +24,10 @@ class FlaskrTestCase(unittest.TestCase):
     def test_home(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 404)
+
+    def test_healthcheck(self):
+        response = self.client.get('/healthcheck')
+        self.assertEqual(response.status_code, 200)
 
     def test_list_view(self):
         response = self.client.get('{base_url}/'.format(base_url=self.base_url))

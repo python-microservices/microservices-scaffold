@@ -20,7 +20,7 @@ Test the image:
     
 Push to Kubernetes:
 
-    kubectl create -f service.yaml
+    kubectl apply -f service.yaml
     
     
 ## How to contrib

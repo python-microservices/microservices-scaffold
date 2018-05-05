@@ -16,4 +16,4 @@ ADD . $APP_HOME
 EXPOSE 5000
 USER python
 
-CMD ["gunicorn", "--worker-class", "eventlet", "--workers", "8", "--log-level", "INFO", "--bind", "0.0.0.0:5000", "manage:app"]
+CMD ["gunicorn", "--worker-class", "gevent", "--workers", "8", "--log-level", "INFO", "--bind", "0.0.0.0:5000", "manage:app"]
