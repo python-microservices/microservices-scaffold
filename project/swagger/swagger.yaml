@@ -1,0 +1,89 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a sample server Color server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
+  version: "1.0.0"
+  title: "Swagger Color list"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+- name: "colors"
+  description: "Everything about your colors"
+  externalDocs:
+    description: "Find out more"
+    url: "http://swagger.io"
+- name: "store"
+  description: "Example endpoint  list of colors"
+- name: "user"
+  description: "Operations about user"
+  externalDocs:
+    description: "Find out more about our store"
+    url: "http://swagger.io"
+schemes:
+- "http"
+paths:
+  /:
+    post:
+      tags:
+      - "colors"
+      summary: "Example endpoint return create a color"
+      description: ""
+      operationId: "create_view"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "name"
+        description: "Pet object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Color"
+      responses:
+        200:
+          description: "The color created"
+          schema:
+            $ref: '#/definitions/Color'
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "project.views.views"
+    get:
+      tags:
+      - "colors"
+      summary: "Example endpoint return a list of colors by palette"
+      description: ""
+      operationId: "list_view"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "A list of colors (may be filtered by palette)"
+          schema:
+            $ref: '#/definitions/Color'
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Pet not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "project.views.views"
+definitions:
+      Color:
+        type: "object"
+        properties:
+          id:
+            type: "string"
+          timestamp:
+            type: "string"
+          name:
+            type: "string"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

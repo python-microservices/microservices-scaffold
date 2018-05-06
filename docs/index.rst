@@ -7,11 +7,13 @@ Python Microservices
 
 Stack
 -----
+* `connexion <http://connexion.readthedocs.io>`_
 * `Flask <https://github.com/pallets/flask>`_
 * `SQLAlchemy <https://www.sqlalchemy.org/>`_
 * `Flask-SQLAlchemy <http://flask-sqlalchemy.pocoo.org/2.3/>`_
-* `Flasgger <https://github.com/rochacbruno/flasgger>`_
+* `Flask-Injector <https://github.com/alecthomas/flask_injector>`_
 * `Flask-Script <https://flask-script.readthedocs.io/en/latest/>`_
+* `Opentracing <https://github.com/opentracing-contrib/python-flask>`_
 
 
 Content
