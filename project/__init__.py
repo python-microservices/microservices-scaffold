@@ -3,8 +3,7 @@
 import logging
 import os
 
-from flasgger import Swagger
-from flask import Flask
+import connexion
 from flask_injector import FlaskInjector
 from injector import Injector
 
@@ -23,109 +22,39 @@ logger.setLevel(logging.DEBUG)
 
 ENVIRONMENT = os.environ.get("ENVIRONMENT", "default")
 
-SWAGGER_CONFIG = {
-    "headers": [
-    ],
-    "specs": [
-        {
-            "endpoint": 'apispec_1',
-            "route": '{application_root}/apispec_1.json',
-            "rule_filter": lambda rule: True,  # all in
-            "model_filter": lambda tag: True,  # all in
-        }
-    ],
-    "info": {
-        "title": "API ",
-        "description": "API para...",
-        "contact": {
-            "responsibleOrganization": "ME",
-            "responsibleDeveloper": "Me",
-            "email": "me@me.com",
-        },
-        "version": "0.0.1"
-    },
-    "securityDefinitions": {
-        "APIKeyHeader": {"type": "apiKey", "name": "Authorization", "in": "header"},
-    },
-    "static_url_path": "{application_root}/flasgger_static",
-    "swagger_ui": True,
-    "uiversion": 2,
-    "specs_route": "/apidocs/",
-    "basePath": "{application_root}"
-}
-
-
-class PrefixMiddleware(object):
-    """Set a prefix path to all routes. This action is needed if you have a stack of microservices and each of them
-    exist in the same domain but different path. Por example:
-    * mydomain.com/ms1/
-    * mydomain.com/ms2/
-    """
-
-    def __init__(self, app, prefix=''):
-        self.app = app
-        self.prefix = prefix
-
-    def __call__(self, environ, start_response):
-        if environ['PATH_INFO'].startswith(self.prefix):
-            environ['PATH_INFO'] = environ['PATH_INFO'][len(self.prefix):]
-            environ['SCRIPT_NAME'] = self.prefix
-            return self.app(environ, start_response)
-        elif environ['PATH_INFO'].startswith("/healthcheck"):
-            return self.app(environ, start_response)
-        else:
-            start_response('404', [('Content-Type', 'text/plain')])
-            return ["This url does not belong to the app.".encode()]
-
 
 def create_app():
     """Initialize the Flask app, register blueprints and intialize all libraries like Swagger, database, the trace system...
     return the app and the database objects.
     :return:
     """
-
-    from project.views import views_bp as views_blueprint
     environment = os.environ.get("ENVIRONMENT", "default")
 
-    app = Flask(__name__)
-    app.config.from_object(CONFIG[environment])
-    app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix=app.config["APPLICATION_ROOT"])
+    app = connexion.App(__name__, specification_dir='./swagger/')
+    # app.app.json_encoder = encoder.JSONEncoder
+    app.add_api('swagger.yaml', arguments={'title': 'Swagger Example Project'})
 
-    db.init_app(app)
-
-    # Initialize Swagger
-    SWAGGER_CONFIG["specs"][0]["route"] = SWAGGER_CONFIG["specs"][0]["route"].format(
-        application_root=app.config["APPLICATION_ROOT"]
-    )
-    SWAGGER_CONFIG["static_url_path"] = SWAGGER_CONFIG["static_url_path"].format(
-        application_root=app.config["APPLICATION_ROOT"]
-    )
-    SWAGGER_CONFIG["specs_route"] = SWAGGER_CONFIG["specs_route"].format(
-        application_root=app.config["APPLICATION_ROOT"]
-    )
-    SWAGGER_CONFIG["basePath"] = SWAGGER_CONFIG["basePath"].format(
-        application_root=app.config["APPLICATION_ROOT"]
-    )
-    Swagger(app, config=SWAGGER_CONFIG)
+    application = app.app
+    application.config.from_object(CONFIG[environment])
+    db.init_app(application)
 
     # Initialize Blueprints
-    app.register_blueprint(views_blueprint)
-    app.register_blueprint(healthcheck_blueprint)
+    application.register_blueprint(healthcheck_blueprint)
 
     # Inject Modules
-    # Inject Modules
-    if not app.config["TESTING"] and not app.config["DEBUG"]:
+    if not application.config["TESTING"] and not application.config["DEBUG"]:
         log_handler = logging.StreamHandler()
         formatter = CustomJsonFormatter('(timestamp) (level) (name) (module) (funcName) (lineno) (message)')
-        formatter.add_service_name(app.config["APP_NAME"])
-        tracer = TracerModule(app)
+        formatter.add_service_name(application.config["APP_NAME"])
+        tracer = TracerModule(application)
         injector = Injector([tracer])
-        FlaskInjector(app=app, injector=injector)
+        FlaskInjector(app=application, injector=injector)
         formatter.add_trace_span(tracer.tracer)
         log_handler.setFormatter(formatter)
-        app.logger.addHandler(log_handler)
-        app.logger.setLevel(logging.INFO)
+        application.logger.addHandler(log_handler)
+        application.logger.setLevel(logging.INFO)
 
-    with app.test_request_context():
+    with application.test_request_context():
         db.create_all()
-    return app, db
+
+    return application, db
