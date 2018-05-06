@@ -23,14 +23,18 @@ You have a project with this structure:
    project
    ├ __init__.py
    ├ config.py
-   ├ views
-   │ ├ __init__.py
-   │ └ views.py
    ├ models
    │ ├ __init__.py
    │ └ models.py
-   └ tests
-     └ test_views.py
+   ├ swagger
+   │ └ swagger.yaml
+   ├ tests
+   │ └ test_views.py
+   └views
+     ├ __init__.py
+     └ views.py
+
+
 
 manager.py
 ----------
@@ -80,6 +84,10 @@ See :doc:`configuration </configuration>` section
 
 project/views
 ~~~~~~~~~~~~~
-use views.py or create your file. You must add after register the view blueprint in `project/views/__init__.py`.
+use views.py or create your file.
+
+swagger/swagger.yaml
+~~~~~~~~~~~~~
+Use to define your rest behaviour, endpoints and routes. See `connexion <http://connexion.readthedocs.io>`_ docs to how add new views
 
 
