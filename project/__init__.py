@@ -15,7 +15,7 @@ from pyms.tracer.main import TracerModule
 
 __author__ = "Alberto Vara"
 __email__ = "a.vara.1986@gmail.com"
-__version__ = "0.1"
+__version__ = "0.2"
 
 logger = logging.getLogger('jaeger_tracing')
 logger.setLevel(logging.DEBUG)
