@@ -1,6 +1,5 @@
 -e git+https://github.com/jaegertracing/jaeger-client-python.git#egg=jaeger_client
-flasgger==0.8.1
-Flask==0.12.2
+connexion==1.1.15
 Flask-Injector==0.10.1
 Flask-OpenTracing==0.1.8
 Flask-Script==2.0.6

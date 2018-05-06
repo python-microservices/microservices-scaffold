@@ -36,6 +36,10 @@ class ProjectTestCase(unittest.TestCase):
 
     def test_create_view(self):
         name = "blue"
-        response = self.client.post('{base_url}/'.format(base_url=self.base_url), data={"name": name})
+        response = self.client.post('{base_url}/'.format(
+            base_url=self.base_url),
+            data=json.dumps(dict(name=name)),
+            content_type='application/json'
+        )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(_format_response(response.data)["name"], name)
