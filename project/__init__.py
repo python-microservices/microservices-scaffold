@@ -32,9 +32,12 @@ def create_app():
 
     app = connexion.App(__name__, specification_dir='./swagger/')
     # app.app.json_encoder = encoder.JSONEncoder
-    app.add_api('swagger.yaml', arguments={'title': 'Swagger Example Project'})
-
     application = app.app
+    app.add_api('swagger.yaml',
+                arguments={'title': 'Swagger Example Project'},
+                base_path=application.config["APPLICATION_ROOT"])
+
+
     application.config.from_object(CONFIG[environment])
     db.init_app(application)
 
