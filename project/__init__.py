@@ -1,8 +1,6 @@
 from pyms.flask.app import Microservice
-from project.config import CONFIG
-from project.models.init_db import db
-from pyms.flask.app import Microservice
 
+from project.config import CONFIG
 from project.config import CONFIG
 from project.models.init_db import db
 
