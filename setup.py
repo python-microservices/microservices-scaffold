@@ -22,7 +22,7 @@ setup(
     description="Python Miscroservice barebone",
     long_description=long_description,
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 6 - Mature",
         "Environment :: Console",
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
