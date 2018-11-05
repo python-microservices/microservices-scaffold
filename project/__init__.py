@@ -8,7 +8,7 @@ from project.models.init_db import db
 
 __author__ = "Alberto Vara"
 __email__ = "a.vara.1986@gmail.com"
-__version__ = "0.3"
+__version__ = "0.3.1"
 
 
 class MyMicroservice(Microservice):
