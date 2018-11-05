@@ -6,4 +6,4 @@ Flask-Script==2.0.6
 Flask-SQLAlchemy==2.3.2
 SQLAlchemy==1.2.13
 python-json-logger==0.1.9
-requests==2.18.4
+requests==2.20.0
