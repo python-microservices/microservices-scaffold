@@ -30,6 +30,7 @@ setup(
         "License :: OSI Approved :: GPL License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6"
     ],
     python_requires='>=3.6',
