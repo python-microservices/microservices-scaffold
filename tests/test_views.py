@@ -8,6 +8,9 @@ from pyms.constants import CONFIGMAP_FILE_ENVIRONMENT
 
 
 def _format_response(response: Text = "") -> Union[List, Dict]:
+    # python3.5 compatibility
+    if isinstance(response, bytes):
+        response = str(response, encoding="utf-8")
     return json.loads(response)
 
 
