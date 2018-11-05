@@ -15,7 +15,7 @@ else:
     long_description = 'https://github.com/python-microservices/microservices-scaffold'
 
 setup(
-    name="MS Scaffold",
+    name="MS-Scaffold",
     version=version,
     author=author,
     author_email=author_email,
