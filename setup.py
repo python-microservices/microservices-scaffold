@@ -30,9 +30,11 @@ setup(
         "License :: OSI Approved :: GPL License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6"
     ],
-    license="GPL",
+    python_requires='>=3.5',
+    license="GPLv3",
     platforms=["any"],
     keywords="python, microservices",
     url='https://github.com/python-microservices/microservices-scaffold',

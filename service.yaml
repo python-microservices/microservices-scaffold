@@ -1,4 +1,3 @@
-# interno
 kind: Service
 apiVersion: v1
 kind: Service
@@ -31,6 +30,33 @@ spec:
           ports:
             - name: http
               containerPort: 5000
+          env:
+            - name: CONFIGMAP_FILE
+              value: "/usr/share/microservice/config.yaml"
+          volumeMounts:
+            - mountPath: /usr/share/microservice
+              name: ms-config-volume
+      volumes:
+        - name: ms-config-volume
+          configMap:
+            name: template-configmap
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: template-configmap
+data:
+  # When the config map is mounted as a volume, these will be created as files.
+  config.yaml: |-
+    ms:
+      DEBUG: false
+      TESTING: false
+      APP_NAME: Template
+      APPLICATION_ROOT : /template
+      SQLALCHEMY_TRACK_MODIFICATIONS: true
+      SECRET_KEY: "gjr39dkjn344_!67#"
+      DATABASE: db.sqlite3
+      SQLALCHEMY_DATABASE_URI: sqlite:///db.sqlite3
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
