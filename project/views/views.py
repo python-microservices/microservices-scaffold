@@ -1,9 +1,10 @@
 # encoding: utf-8
 from __future__ import absolute_import, print_function, unicode_literals
-import connexion
-from flask import request, jsonify, current_app
 
-from pyms.models import db
+import connexion
+from flask import jsonify, current_app
+
+from project.models.init_db import db
 from project.models.models import Colors
 
 

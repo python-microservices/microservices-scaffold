@@ -15,14 +15,14 @@ else:
     long_description = 'https://github.com/python-microservices/microservices-scaffold'
 
 setup(
-    name="MS Scaffold",
+    name="MS-Scaffold",
     version=version,
     author=author,
     author_email=author_email,
     description="Python Miscroservice barebone",
     long_description=long_description,
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 6 - Mature",
         "Environment :: Console",
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
@@ -30,9 +30,11 @@ setup(
         "License :: OSI Approved :: GPL License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6"
     ],
-    license="GPL",
+    python_requires='>=3.5',
+    license="GPLv3",
     platforms=["any"],
     keywords="python, microservices",
     url='https://github.com/python-microservices/microservices-scaffold',
