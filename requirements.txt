@@ -2,4 +2,4 @@ Flask-SQLAlchemy==2.3.2
 # py-ms==0.1.1
 git+https://github.com/python-microservices/pyms.git@master#egg=py-ms
 Flask-Script==2.0.6
-connexion[swagger-ui]
+connexion[swagger-ui]==2.0.1
