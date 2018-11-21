@@ -24,9 +24,6 @@ class ProjectTestCase(unittest.TestCase):
         self.base_url = self.app.config["APPLICATION_ROOT"]
         self.client = self.app.test_client()
 
-    def tearDown(self):
-        pass # os.unlink(self.app.config['DATABASE'])
-
     def test_home(self):
         response = self.client.get('/')
         self.assertEqual(404, response.status_code)
@@ -48,3 +45,6 @@ class ProjectTestCase(unittest.TestCase):
         )
         self.assertEqual(200, response.status_code)
         self.assertEqual(name, _format_response(response.data)["name"])
+
+    def tearDown(self):
+        pass # os.unlink(self.app.config['DATABASE'])
