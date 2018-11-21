@@ -12,16 +12,9 @@ from project.models.models import Colors
 def list_view():
     """Example endpoint return a list of colors by palette
     """
-    try:
-        current_app.logger.info("Return all color list")
-        query = Colors.query.all()
-        return jsonify([i.serialize for i in query])
-    except Exception as e:
-        exc_error_type, exc_value, exc_traceback = exc_info()
-        current_app.logger.error(
-            "Error: {}, type: {},  traceback: {}".format(e, exc_error_type, exc_traceback),
-            exc_info=exc_traceback
-        )
+    current_app.logger.info("Return all color list")
+    query = Colors.query.all()
+    return jsonify([i.serialize for i in query])
 
 
 def create_view():
