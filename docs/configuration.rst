@@ -1,16 +1,8 @@
 Configuration
 =============
 
-The project is configured in `project/config.py`. You must set the project name `APP_NAME` and the path prefix
-of the project `APPLICATION_ROOT`. This constants is defined in the class Config:
-
-.. code-block:: python
-
-    class Config:
-        DEBUG = False
-        TESTING = False
-        APP_NAME = "Template"
-        APPLICATION_ROOT = "/template"
+Project configuration is loaded using py-ms library based on yml or json file.
+Some example files are config.yml, config-docker.yml and tests/config-tests.yml.
 
 Documentation
 -------------
