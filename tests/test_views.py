@@ -3,7 +3,7 @@ import os
 import unittest
 from typing import Dict, List, Union, Text
 
-from project import MyMicroservice
+from project.app import MyMicroservice
 from pyms.constants import CONFIGMAP_FILE_ENVIRONMENT
 
 
