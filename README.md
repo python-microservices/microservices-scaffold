@@ -8,6 +8,16 @@ Barebones Python Microservices
 [![Python 3](https://pyup.io/repos/github/python-microservices/microservices-scaffold/python-3-shield.svg)](https://pyup.io/repos/github/python-microservices/microservices-scaffold/)
 
 
+# How to run the scaffold
+
+```bash
+python manage.py runserver
+
+```
+
+Open in your browser http://localhost:5000/template/ui/
+
+Read more info in the documentation page: https://microservices-scaffold.readthedocs.io/en/latest/
 
 # Docker
 

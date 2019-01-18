@@ -8,6 +8,7 @@ You have a project with this structure:
    Dockerfile
    LICENSE
    manage.py
+   config.yml
    README.md
    requirements.txt
    requirements-tests.txt
@@ -18,7 +19,6 @@ You have a project with this structure:
    tox.ini
    project
    ├ __init__.py
-   ├ config.py
    ├ models
    │ ├ __init__.py
    │ └ models.py
@@ -47,6 +47,7 @@ You can set the host and the port with:
 .. code-block:: bash
 
     python manage.py runserver -h 0.0.0.0 -p 8080
+
 
 Common Libraries
 ----------------
