@@ -1,8 +1,8 @@
 Configuration
 =============
 
-Project configuration is loaded using py-ms library based on yml or json file.
-Some example files are config.yml, config-docker.yml and tests/config-tests.yml.
+Project configuration is loaded using py-ms package based on yml or json file.
+Some example files are config.yml, config-docker.yml and tests/config-tests.yml or see `PyMS configuration <https://py-ms.readthedocs.io/en/latest/configuration/>`_
 
 Documentation
 -------------

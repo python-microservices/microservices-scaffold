@@ -4,9 +4,20 @@
 
 Python Microservices
 ====================
+Python Microservice Scaffold is an example to how structure a Flask Microservice Project.
+This Scaffold is build over `PyMS <https://github.com/python-microservices/pyms>`_ package. PyMS is a `Microservice chassis pattern <https://microservices.io/patterns/microservice-chassis.html>`_
+like Spring Boot (Java) or Gizmo (Golang). PyMS is a collection of libraries, best practices and recommended ways to build
+microservices with Python which handles cross-cutting concerns:
+- Externalized configuration
+- Logging
+- Health checks
+- Metrics (TODO)
+- Distributed tracing
+
 
 Stack
 -----
+* `PyMS <https://github.com/python-microservices/pyms>`_
 * `connexion <http://connexion.readthedocs.io>`_
 * `Flask <https://github.com/pallets/flask>`_
 * `SQLAlchemy <https://www.sqlalchemy.org/>`_

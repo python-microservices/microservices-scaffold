@@ -1,5 +1,13 @@
 # microservices-scaffold
-Barebones Python Microservices
+Python Microservice Scaffold is an example to how structure a Flask Microservice Project.
+This Scaffold is build over [PyMS](https://github.com/python-microservices/pyms) package. PyMS is a [Microservice chassis pattern](https://microservices.io/patterns/microservice-chassis.html)
+like Spring Boot (Java) or Gizmo (Golang). PyMS is a collection of libraries, best practices and recommended ways to build
+microservices with Python which handles cross-cutting concerns:
+- Externalized configuration
+- Logging
+- Health checks
+- Metrics (TODO)
+- Distributed tracing
 
 [![Build Status](https://travis-ci.org/python-microservices/microservices-scaffold.svg?branch=master)](https://travis-ci.org/python-microservices/microservices-scaffold)
 [![Coverage Status](https://coveralls.io/repos/github/python-microservices/microservices-scaffold/badge.svg?branch=master)](https://coveralls.io/github/python-microservices/microservices-scaffold?branch=master)
@@ -11,13 +19,16 @@ Barebones Python Microservices
 # How to run the scaffold
 
 ```bash
+virtualenv --python=python[3.6|3.7|3.8] venv
+source venv/bin/activate
+pip install -r requirements.txt
 python manage.py runserver
-
 ```
 
 Open in your browser http://localhost:5000/template/ui/
 
-Read more info in the documentation page: https://microservices-scaffold.readthedocs.io/en/latest/
+Read more info in the documentation page: 
+https://microservices-scaffold.readthedocs.io/en/latest/
 
 # Docker
 
@@ -37,7 +48,7 @@ Push to Kubernetes:
     
 ## How to contrib
 
-TODO
+See https://github.com/python-microservices/pyms/blob/master/CONTRIBUTING.md
 
 ### Update docs
 
