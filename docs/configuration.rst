@@ -9,6 +9,7 @@ Documentation
 The Microservice create a URL to inspect the Swagger documentation of the api in:
 
 .. code-block:: bash
+
     localhost:5000/[APPLICATION_ROOT]/ui/
 
 Our API Rest work with `connexion <http://connexion.readthedocs.io>`_. You can see connexion docs or the official
