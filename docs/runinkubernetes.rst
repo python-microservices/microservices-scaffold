@@ -8,7 +8,10 @@ Use MS with Docker
 
 Use MS with Kubernetes localy
 -----------------------------
-Configure your service.yaml (TODO: create docs to configure kubernetes service.yaml)
+We create a extensive example an tutorial about use Python microservice scaffold with Kubernetes in this repository:
+https://github.com/python-microservices/microservices-chat
+
+In the nexts lines, you can find a simple tutorial tu run this microservice in a simple Kubernetes cluster
 
 * Installing Kubernetes...
 

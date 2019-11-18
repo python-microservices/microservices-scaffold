@@ -23,4 +23,4 @@ RUN chmod 777 $DATABASE_DIR
 EXPOSE 5000
 USER python
 
-CMD ["gunicorn", "--worker-class", "gevent", "--workers", "8", "--log-level", "INFO", "--bind", "0.0.0.0:5000", "manage:app"]
+CMD ["gunicorn", "--workers", "8", "--log-level", "INFO", "--bind", "0.0.0.0:5000", "manage:app"]
