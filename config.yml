@@ -1,3 +1,9 @@
+pyms:
+  requests:
+    data: ""
+  swagger:
+    path: "swagger"
+    file: "swagger.yaml"
 ms:
   DEBUG: false
   TESTING: false
@@ -6,4 +12,4 @@ ms:
   SQLALCHEMY_TRACK_MODIFICATIONS: true
   SECRET_KEY: "gjr39dkjn344_!67#"
   DATABASE: db.sqlite3
-  SQLALCHEMY_DATABASE_URI: sqlite:////microservice/database/db.sqlite3
+  SQLALCHEMY_DATABASE_URI: sqlite:////tmp/db.sqlite3

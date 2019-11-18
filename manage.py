@@ -1,7 +1,7 @@
 # encoding: utf-8
 from flask_script import Manager
 
-from project import create_app
+from project.app import create_app
 
 app = create_app()
 

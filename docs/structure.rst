@@ -5,24 +5,20 @@ You have a project with this structure:
 
 .. code-block:: bash
 
-   manager.py
+   Dockerfile
+   LICENSE
+   manage.py
+   config.yml
+   README.md
    requirements.txt
    requirements-tests.txt
    requirements-docker.txt
+   service.yaml
    setup.py
+   tests.sh
    tox.ini
-   myms
-   ├ healthcheck
-   │ └ healthcheck.py
-   ├ logger
-   │ └ logger.py
-   ├ models
-   │ └ __init__.py
-   └ tracer
-     └ main.py
    project
    ├ __init__.py
-   ├ config.py
    ├ models
    │ ├ __init__.py
    │ └ models.py
@@ -33,7 +29,8 @@ You have a project with this structure:
    └views
      ├ __init__.py
      └ views.py
-
+   docs/
+   tests/
 
 
 manager.py
@@ -51,43 +48,35 @@ You can set the host and the port with:
 
     python manage.py runserver -h 0.0.0.0 -p 8080
 
-Common Structure
+
+Common Libraries
 ----------------
 
-myms/healthcheck/healthcheck.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This views is usually used by Kubernetes, Eureka and other systems to check if our application is up and running
-
-myms/logger/logger.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Print logger in JSON format to send to server like Elasticsearch. Inject span traces in logger
-
-myms/models/__init__.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Initizalize `flask_sqlalchemy.SQLAlchemy object`
-
-myms/tracer/main.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Create an injector `flask_opentracing.FlaskTracer` to use in our projects
+py-ms is a library that contains a set of common features for microservices.
 
 Structure of a project
 ----------------------
 
-project/__init__.py
-~~~~~~~~~~~~~~~~~~~
-This file init the project with the funcion `create_app`. Initialize the Flask app, register `blueprints <http://flask.pocoo.org/docs/0.12/blueprints/>`_
-and intialize all libraries like Swagger, database, the trace system...
+For project configuration see :doc:`configuration </configuration>` section.
 
-project/config.py
-~~~~~~~~~~~~~~~~~
-See :doc:`configuration </configuration>` section
+project/models/init_db.py
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Initialize `flask_sqlalchemy.SQLAlchemy object`.
+
+project/models/models.py
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Project specific models.
+
+project/swagger/swagger.yaml
+~~~~~~~~~~~~~
+Use to define your rest behaviour, endpoints and routes. See `connexion <http://connexion.readthedocs.io>`_ docs to how add new views.
 
 project/views
 ~~~~~~~~~~~~~
 use views.py or create your file.
 
-swagger/swagger.yaml
-~~~~~~~~~~~~~
-Use to define your rest behaviour, endpoints and routes. See `connexion <http://connexion.readthedocs.io>`_ docs to how add new views
-
+project/__init__.py
+~~~~~~~~~~~~~~~~~~~
+This file init the project calling `create_app` method. Initialize the Flask app, register `blueprints <http://flask.pocoo.org/docs/0.12/blueprints/>`_
+and initialize all libraries like Swagger, database, trace system, custom logger format, etc.
 

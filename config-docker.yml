@@ -1,3 +1,9 @@
+pyms:
+  requests:
+    data: ""
+  swagger:
+    path: "swagger"
+    file: "swagger.yaml"
 ms:
   DEBUG: false
   TESTING: false
