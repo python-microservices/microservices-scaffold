@@ -4,6 +4,10 @@ pyms:
   swagger:
     path: "swagger"
     file: "swagger.yaml"
+  tracer:
+    client: "jaeger"
+    host: "localhost"
+    component_name: "Python Microservice"
 ms:
   DEBUG: false
   TESTING: false
