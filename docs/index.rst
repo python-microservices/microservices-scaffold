@@ -34,9 +34,9 @@ Content
    :maxdepth: 4
 
    installation
-   runinkubernetes
    quickstart
    structure
    configuration
    codeexample
    project
+   runinkubernetes
