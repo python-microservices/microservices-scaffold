@@ -4,6 +4,7 @@ pyms:
   swagger:
     path: "swagger"
     file: "swagger.yaml"
+    url: "/ui/"
   tracer:
     client: "jaeger"
     host: "localhost"

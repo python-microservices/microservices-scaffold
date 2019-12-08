@@ -18,33 +18,69 @@ microservices with Python which handles cross-cutting concerns:
 
 # How to run the scaffold
 
+## Instalation
 ```bash
 virtualenv --python=python[3.6|3.7|3.8] venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+
+## Run your python script
+```bash
 python manage.py runserver
 ```
 
-Open in your browser http://localhost:5000/template/ui/
+## Check the result
+
+Your default endpoint will be in this url:
+```bash
+http://127.0.0.1:5000/template/
+```
+
+This URL is setted in your `config.yml`:
+
+```yaml
+ms:
+  DEBUG: false
+  TESTING: false
+  APP_NAME: Template
+  APPLICATION_ROOT : /template # <!---
+```
+
+You can acceded to a [swagger ui](https://swagger.io/tools/swagger-ui/) in the next url:
+```bash
+http://127.0.0.1:5000/template/ui/
+```
+
+This PATH is setted in your `config.yml`:
+
+```yaml
+pyms:
+  swagger:
+    path: "swagger"
+    file: "swagger.yaml"
+    url: "/ui/" # <!---
+```
 
 Read more info in the documentation page: 
 https://microservices-scaffold.readthedocs.io/en/latest/
 
 # Docker
-
-Create and push the image
+You can dockerize this microservice wit this steps:
+* Create and push the image
 
     docker build -t template -f Dockerfile .
-
-Test the image:
+* Run the image:
 
     docker run -d -p 5000:5000 template
     
-    
-Push to Kubernetes:
+ 
+# Kubernetes
+You can run this microservice in a Kubernetes cluster with:
 
     kubectl apply -f service.yaml
-    
+   
+See a simple tutorial in [the doc](https://microservices-scaffold.readthedocs.io/en/latest/runinkubernetes.html)
     
 ## How to contrib
 
