@@ -13,7 +13,7 @@ def dump_datetime(value: datetime) -> list:
     return [value.strftime("%Y-%m-%d"), value.strftime("%H:%M:%S")]
 
 
-class Colors(db.Model):
+class Color(db.Model):
     """Example model"""
     __tablename__ = 'colors'
 
