@@ -101,7 +101,5 @@ ENV/
 .mypy_cache/
 
 .idea
-
 pylintReport.txt
-db.sqlite3
 _build

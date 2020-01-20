@@ -3,8 +3,9 @@ import os
 import unittest
 from typing import Dict, List, Union, Text
 
-from project.app import MyMicroservice
 from pyms.constants import CONFIGMAP_FILE_ENVIRONMENT
+
+from project.app import MyMicroservice
 
 
 def _format_response(response: Text = "") -> Union[List, Dict]:
@@ -19,13 +20,14 @@ class ProjectTestCase(unittest.TestCase):
 
     def setUp(self):
         os.environ[CONFIGMAP_FILE_ENVIRONMENT] = os.path.join(self.BASE_DIR, "config-tests.yml")
-        ms = MyMicroservice(service="ms", path=os.path.join(os.path.dirname(os.path.dirname(__file__)), "project", "test_views.py"))
+        ms = MyMicroservice(service="ms",
+                            path=os.path.join(os.path.dirname(os.path.dirname(__file__)), "project", "test_views.py"))
         self.app = ms.create_app()
         self.base_url = self.app.config["APPLICATION_ROOT"]
         self.client = self.app.test_client()
 
     def tearDown(self):
-        pass # os.unlink(self.app.config['DATABASE'])
+        pass  # os.unlink(self.app.config['DATABASE'])
 
     def test_home(self):
         response = self.client.get('/')
@@ -36,14 +38,15 @@ class ProjectTestCase(unittest.TestCase):
         self.assertEqual(200, response.status_code)
 
     def test_list_view(self):
-        response = self.client.get('{base_url}/'.format(base_url=self.base_url))
+        response = self.client.get('{base_url}/actors'.format(base_url=self.base_url))
         self.assertEqual(200, response.status_code)
 
     def test_create_view(self):
-        name = "blue"
-        response = self.client.post('{base_url}/'.format(
+        name = "Robert"
+        surname = "Downey Jr."
+        response = self.client.post('{base_url}/actors'.format(
             base_url=self.base_url),
-            data=json.dumps(dict(name=name)),
+            data=json.dumps(dict(name=name, surname=surname)),
             content_type='application/json'
         )
         self.assertEqual(200, response.status_code)

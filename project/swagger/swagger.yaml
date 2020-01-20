@@ -1,89 +1,177 @@
 ---
 swagger: "2.0"
 info:
-  description: "This is a sample server Color server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
+  description: "This is a sample API server.  See source code in [Python Microservices](https://github.com/python-microservices/microservices-scaffold)"
   version: "1.0.0"
-  title: "Swagger Color list"
-  termsOfService: "http://swagger.io/terms/"
+  title: "API of Films and actors"
+  termsOfService: "https://github.com/python-microservices/microservices-scaffold/"
   contact:
-    email: "apiteam@swagger.io"
+    email: "a.vara.1986@gmail.com"
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 tags:
-- name: "colors"
-  description: "Everything about your colors"
+- name: "Films"
+  description: "Everything about your films"
   externalDocs:
     description: "Find out more"
-    url: "http://swagger.io"
-- name: "store"
-  description: "Example endpoint  list of colors"
-- name: "user"
-  description: "Operations about user"
+    url: "https://github.com/python-microservices/microservices-scaffold"
+- name: "Actors"
+  description: "Everything about your actors"
   externalDocs:
-    description: "Find out more about our store"
-    url: "http://swagger.io"
+    description: "Find out more"
+    url: "https://github.com/python-microservices/microservices-scaffold"
 schemes:
 - "http"
 paths:
-  /:
+  /actors:
     post:
       tags:
-      - "colors"
-      summary: "Example endpoint return create a color"
+      - "Actors"
+      summary: "Example endpoint return create a actor"
       description: ""
-      operationId: "create_view"
       consumes:
       - "application/json"
       produces:
       - "application/json"
       parameters:
       - in: "body"
-        name: "name"
-        description: "Pet object that needs to be added to the store"
+        name: "actor"
+        description: "Data of the actor"
         required: true
         schema:
-          $ref: "#/definitions/Color"
+          $ref: "#/definitions/Actor"
       responses:
         200:
-          description: "The color created"
+          description: "The actor created"
           schema:
-            $ref: '#/definitions/Color'
+            $ref: '#/definitions/Actor'
         405:
           description: "Invalid input"
-      x-swagger-router-controller: "project.views.views"
     get:
       tags:
-      - "colors"
-      summary: "Example endpoint return a list of colors by palette"
+      - "Actors"
+      summary: "Example endpoint return a list of actors"
       description: ""
-      operationId: "list_view"
       consumes:
       - "application/json"
       produces:
       - "application/json"
       responses:
         200:
-          description: "A list of colors (may be filtered by palette)"
+          description: "A list of actors"
           schema:
-            $ref: '#/definitions/Color'
+            $ref: '#/definitions/Actors'
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Pet not found"
+          description: "Actor not found"
         405:
           description: "Validation exception"
-      x-swagger-router-controller: "project.views.views"
+  /films:
+    post:
+      tags:
+      - "Films"
+      summary: "Example endpoint return create a film"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "payload"
+        description: "Data of the film"
+        required: true
+        schema:
+          $ref: "#/definitions/Film"
+      responses:
+        200:
+          description: "The film created"
+          schema:
+            $ref: '#/definitions/Film'
+        405:
+          description: "Invalid input"
+    get:
+      tags:
+      - "Films"
+      summary: "Example endpoint return a list of films"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "A list of actors"
+          schema:
+            $ref: '#/definitions/Films'
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Actor not found"
+        405:
+          description: "Validation exception"
+  /films/{id}:
+    put:
+      tags:
+      - "Films"
+      summary: "Example endpoint return create a film"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of film to return"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "payload"
+        description: "Data of the film"
+        required: true
+        schema:
+          $ref: "#/definitions/Film"
+      responses:
+        200:
+          description: "The film created"
+          schema:
+            $ref: '#/definitions/Film'
+        405:
+          description: "Invalid input"
 definitions:
-      Color:
+      Actor:
         type: "object"
         properties:
           id:
-            type: "string"
-          timestamp:
-            type: "string"
+            type: "integer"
           name:
             type: "string"
+          surname:
+            type: "string"
+      Actors:
+        type: "array"
+        items:
+          $ref: '#/definitions/Actor'
+      Film:
+        type: "object"
+        properties:
+          id:
+            type: "integer"
+          name:
+            type: "string"
+          pubDate:
+            type: "string"
+          cast:
+            type: "array"
+            items:
+              $ref: '#/definitions/Actor'
+      Films:
+        type: "array"
+        items:
+          $ref: '#/definitions/Film'
 externalDocs:
   description: "Find out more about Swagger"
-  url: "http://swagger.io"
+  url: "https://github.com/python-microservices/microservices-scaffold"

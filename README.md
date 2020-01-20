@@ -32,9 +32,10 @@ python manage.py runserver
 
 ## Check the result
 
-Your default endpoint will be in this url:
+Your default endpoints will be in this url:
 ```bash
-http://127.0.0.1:5000/template/
+http://127.0.0.1:5000/films/
+http://127.0.0.1:5000/actors/
 ```
 
 This URL is setted in your `config.yml`:
@@ -44,12 +45,12 @@ ms:
   DEBUG: false
   TESTING: false
   APP_NAME: Template
-  APPLICATION_ROOT : /template # <!---
+  APPLICATION_ROOT : "" # <!---
 ```
 
 You can acceded to a [swagger ui](https://swagger.io/tools/swagger-ui/) in the next url:
 ```bash
-http://127.0.0.1:5000/template/ui/
+http://127.0.0.1:5000/ui/
 ```
 
 This PATH is setted in your `config.yml`:
@@ -69,10 +70,10 @@ https://microservices-scaffold.readthedocs.io/en/latest/
 You can dockerize this microservice wit this steps:
 * Create and push the image
 
-    docker build -t template -f Dockerfile .
+    docker build -t films -f Dockerfile .
 * Run the image:
 
-    docker run -d -p 5000:5000 template
+    docker run -d -p 5000:5000 films
     
  
 # Kubernetes
