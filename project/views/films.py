@@ -11,7 +11,7 @@ from project.serializers.serializers import FilmSchema
 
 def get():
     query = Film.query.options(
-            joinedload(Film.cast),
+        joinedload(Film.cast),
     ).paginate(
         connexion.request.args.get("paginationKey", 1),
         connexion.request.args.get("pageSize", 5)

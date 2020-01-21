@@ -10,10 +10,11 @@ pyms:
     tracer:
       client: "jaeger"
       host: "localhost"
-      component_name: "Python Microservice"
+      component_name: "Python Microservice2"
   config:
     DEBUG: false
     TESTING: true
+    TEST_VAR: "1234"
     APP_NAME: Films&Actors
     APPLICATION_ROOT : ""
     SQLALCHEMY_TRACK_MODIFICATIONS: true

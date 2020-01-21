@@ -2,7 +2,7 @@
 from __future__ import absolute_import, print_function, unicode_literals
 
 import connexion
-from flask import jsonify, current_app
+from flask import jsonify
 
 from project.models.init_db import db
 from project.models.models import Actor

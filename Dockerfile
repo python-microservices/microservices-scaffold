@@ -7,16 +7,17 @@ RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 ENV PYTHONUNBUFFERED=1 ENVIRONMENT=pre APP_HOME=/microservice/
 ENV DATABASE_DIR=database
 ENV CONFIGMAP_FILE="$APP_HOME"config-docker.yml
-
 RUN mkdir $APP_HOME && adduser -S -D -H python
+
 RUN chown -R python $APP_HOME
 WORKDIR $APP_HOME
-
-ADD requirement*.txt $APP_HOME
-RUN pip install --upgrade pip
-RUN pip install -r requirements-docker.txt
-
+RUN pip install pipenv
+COPY Pipfile* /tmp
+RUN cd /tmp && pipenv lock --requirements > requirements.txt
+RUN pip install -r /tmp/requirements.txt
+RUN pip install gevent==1.2.2 gunicorn==19.7.1
 ADD . $APP_HOME
+
 RUN mkdir $DATABASE_DIR
 RUN chmod 777 $DATABASE_DIR
 
