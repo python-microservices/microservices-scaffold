@@ -1,17 +1,9 @@
 language: python
-sudo: false
-cache: false
 python:
     - '3.6'
-addons:
-  apt:
-    sources:
-      - deadsnakes
-    packages:
-    - python3.5
-    - python3.5-dev
 install:
-  - pip install -rrequirements-tests.txt
+  - pip install pipenv
+  - pip install -U tox coverage==4.0.3 coveralls==1.8.2
 
 script:
   - coverage erase
