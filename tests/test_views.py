@@ -4,11 +4,12 @@ import unittest
 from typing import Dict, List, Union, Text
 
 from pyms.constants import CONFIGMAP_FILE_ENVIRONMENT
-# from pyms.prueba import hello
 from pyms.flask.app import config
+
 from project.app import MyMicroservice
 
 backup_config = config()
+
 
 def _format_response(response: Text = "") -> Union[List, Dict]:
     # python3.5 compatibility
@@ -21,7 +22,7 @@ class ProjectTestCase(unittest.TestCase):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
     def setUp(self):
-        # os.environ[CONFIGMAP_FILE_ENVIRONMENT] = os.path.join(self.BASE_DIR, "config-tests.yml")
+        os.environ[CONFIGMAP_FILE_ENVIRONMENT] = os.path.join(self.BASE_DIR, "config-tests.yml")
         ms = MyMicroservice(service="ms",
                             path=os.path.join(os.path.dirname(os.path.dirname(__file__)), "project", "test_views.py"))
         self.app = ms.create_app()
@@ -30,7 +31,7 @@ class ProjectTestCase(unittest.TestCase):
         self.client = self.app.test_client()
 
     def tearDown(self):
-        pass  # os.unlink(self.app.config['DATABASE'])
+        pass
 
     def test_home(self):
         response = self.client.get('/')
