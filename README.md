@@ -6,7 +6,7 @@ microservices with Python which handles cross-cutting concerns:
 - Externalized configuration
 - Logging
 - Health checks
-- Metrics (TODO)
+- Metrics
 - Distributed tracing
 
 [![Build Status](https://travis-ci.org/python-microservices/microservices-scaffold.svg?branch=master)](https://travis-ci.org/python-microservices/microservices-scaffold)
@@ -54,14 +54,15 @@ http://127.0.0.1:5000/films/
 http://127.0.0.1:5000/actors/
 ```
 
-This URL is setted in your `config.yml`:
+This URL is set in your `config.yml`:
 
 ```yaml
-ms:
-  DEBUG: false
-  TESTING: false
-  APP_NAME: Template
-  APPLICATION_ROOT : "" # <!---
+pyms:
+  config:
+    DEBUG: false
+    TESTING: false
+    APP_NAME: Template
+    APPLICATION_ROOT : "" # <!---
 ```
 
 You can acceded to a [swagger ui](https://swagger.io/tools/swagger-ui/) in the next url:
@@ -69,14 +70,15 @@ You can acceded to a [swagger ui](https://swagger.io/tools/swagger-ui/) in the n
 http://127.0.0.1:5000/ui/
 ```
 
-This PATH is setted in your `config.yml`:
+This PATH is set in your `config.yml`:
 
 ```yaml
 pyms:
-  swagger:
-    path: "swagger"
-    file: "swagger.yaml"
-    url: "/ui/" # <!---
+  services:
+    swagger:
+      path: "swagger"
+      file: "swagger.yaml"
+      url: "/ui/" # <!---
 ```
 
 Read more info in the documentation page: 
