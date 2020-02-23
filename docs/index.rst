@@ -12,7 +12,7 @@ microservices with Python which handles cross-cutting concerns:
 * Externalized configuration
 * Logging
 * Health checks
-* Metrics (TODO)
+* Metrics
 * Distributed tracing
 
 

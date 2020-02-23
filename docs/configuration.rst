@@ -12,15 +12,16 @@ The Microservice create a URL to inspect the Swagger documentation of the api in
 
     localhost:5000/[APPLICATION_ROOT]/ui/
 
-This URL is setted in your `config.yml`:
+This URL is set in your `config.yml`:
 
 .. code-block:: yaml
 
-    ms:
-      DEBUG: false
-      TESTING: false
-      APP_NAME: Template
-      APPLICATION_ROOT : /template # <!---
+    pyms:
+      config:
+        DEBUG: false
+        TESTING: false
+        APP_NAME: Template
+        APPLICATION_ROOT : "" # <!---
 
 
 Our API Rest work with `connexion <http://connexion.readthedocs.io>`_. You can see connexion docs or the official

@@ -60,15 +60,15 @@ Structure of a project
 For project configuration see :doc:`configuration </configuration>` section.
 
 project/models/init_db.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Initialize `flask_sqlalchemy.SQLAlchemy object`.
 
 project/models/models.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 Project specific models.
 
 project/swagger/swagger.yaml
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Use to define your rest behaviour, endpoints and routes. See `connexion <http://connexion.readthedocs.io>`_ docs to how add new views.
 
 project/views

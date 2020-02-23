@@ -37,11 +37,12 @@ This URL is setted in your `config.yml`:
 
 .. code-block:: yaml
 
-    ms:
-      DEBUG: false
-      TESTING: false
-      APP_NAME: Template
-      APPLICATION_ROOT : /template # <!---
+    pyms:
+      config:
+        DEBUG: false
+        TESTING: false
+        APP_NAME: Template
+        APPLICATION_ROOT : /template # <!---
 
 You can acceded to a `swagger ui <https://swagger.io/tools/swagger-ui/>`_ in the next url:
 
@@ -53,10 +54,11 @@ This PATH is setted in your `config.yml`:
 
 .. code-block:: yaml
     pyms:
-      swagger:
-        path: "swagger"
-        file: "swagger.yaml"
-        url: "/ui/" # <!---
+      services:
+        swagger:
+          path: "swagger"
+          file: "swagger.yaml"
+          url: "/ui/" # <!---
 
 Template
 --------
