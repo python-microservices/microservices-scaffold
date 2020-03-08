@@ -78,5 +78,5 @@ def create_app():
     return the app and the database objects.
     :return:
     """
-    ms = MyMicroservice(service="ms", path=__file__)
+    ms = MyMicroservice(path=__file__)
     return ms.create_app()
