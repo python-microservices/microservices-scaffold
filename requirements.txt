@@ -1,4 +1,4 @@
-Flask-SQLAlchemy==2.4.1
+Flask-SQLAlchemy==2.4.2
 SQLAlchemy==1.3.17
 Flask-Script==2.0.6
 py-ms[all]==2.6.0
