@@ -85,7 +85,7 @@ Read more info in the documentation page:
 https://microservices-scaffold.readthedocs.io/en/latest/
 
 # Docker
-You can dockerize this microservice wit this steps:
+You can dockerize this microservice with these steps:
 * Create and push the image
 
     docker build -t films -f Dockerfile .
