@@ -5,6 +5,7 @@ pyms:
     swagger:
       path: "swagger"
       file: "swagger.yaml"
+      project_dir: "project.views"
     tracer:
       client: "jaeger"
       host: "localhost"
