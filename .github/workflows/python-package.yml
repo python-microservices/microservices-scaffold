@@ -40,7 +40,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Lint with pylint
       run: |
-        pylint --rcfile=/pylintrc project
+        pylint --rcfile=pylintrc project
     - name: Security safety
       run: |
         safety check
