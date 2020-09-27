@@ -23,8 +23,7 @@ class ProjectTestCase(unittest.TestCase):
 
     def setUp(self):
         os.environ[CONFIGMAP_FILE_ENVIRONMENT] = os.path.join(self.BASE_DIR, "config-tests.yml")
-        ms = MyMicroservice(service="ms",
-                            path=os.path.join(os.path.dirname(os.path.dirname(__file__)), "project", "test_views.py"))
+        ms = MyMicroservice(path=os.path.join(os.path.dirname(os.path.dirname(__file__)), "project", "test_views.py"))
         self.app = ms.create_app()
         self.base_url = self.app.config["APPLICATION_ROOT"]
 
