@@ -38,6 +38,10 @@ setup(
     platforms=["any"],
     keywords="python, microservices",
     url='https://github.com/python-microservices/microservices-scaffold',
-    packages=find_packages(),
+    packages=find_packages(
+        exclude=['*.tests', '*.tests.*', 'tests.*', 'tests', '*.examples', '*.examples.*', 'examples.*', 'examples']),
+    setup_requires=[
+        'pytest-runner>=2.0,<3dev',
+    ],
     include_package_data=True,
 )

@@ -14,14 +14,13 @@ marshmallow-sqlalchemy = "==0.23.1"
 [dev-packages]
 requests-mock = "*"
 coverage = "==4.5.4"
-pytest = "*"
-pytest-cov = "*"
+pytest = ">=5.4.3"
+pytest-cov = ">=2.9.0"
 pylint = "*"
 flake8 = "*"
 tox = "*"
 bandit = "*"
 safety = "*"
-coveralls = "==2.1.2"
 
 [requires]
 python_version = "3.6"
