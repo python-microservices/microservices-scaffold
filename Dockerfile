@@ -4,7 +4,7 @@ RUN apk add --update curl gcc g++ git libffi-dev openssl-dev python3-dev build-b
     && rm -rf /var/cache/apk/*
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
-ENV PYTHONUNBUFFERED=1 ENVIRONMENT=pre APP_HOME=/microservice/
+ENV PYTHONUNBUFFERED=1 APP_HOME=/microservice/
 ENV DATABASE_DIR=database
 ENV CONFIGMAP_FILE="$APP_HOME"config-docker.yml
 RUN mkdir $APP_HOME && adduser -S -D -H python

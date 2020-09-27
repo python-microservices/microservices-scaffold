@@ -42,11 +42,11 @@ paths:
         schema:
           $ref: "#/definitions/Actor"
       responses:
-        200:
+        "200":
           description: "The actor created"
           schema:
             $ref: '#/definitions/Actor'
-        405:
+        "405":
           description: "Invalid input"
     get:
       tags:
@@ -58,15 +58,15 @@ paths:
       produces:
       - "application/json"
       responses:
-        200:
+        "200":
           description: "A list of actors"
           schema:
             $ref: '#/definitions/Actors'
-        400:
+        "400":
           description: "Invalid ID supplied"
-        404:
+        "404":
           description: "Actor not found"
-        405:
+        "405":
           description: "Validation exception"
   /films:
     post:
@@ -86,11 +86,11 @@ paths:
         schema:
           $ref: "#/definitions/Film"
       responses:
-        200:
+        "200":
           description: "The film created"
           schema:
             $ref: '#/definitions/Film'
-        405:
+        "405":
           description: "Invalid input"
     get:
       tags:
@@ -102,15 +102,15 @@ paths:
       produces:
       - "application/json"
       responses:
-        200:
+        "200":
           description: "A list of actors"
           schema:
             $ref: '#/definitions/Films'
-        400:
+        "400":
           description: "Invalid ID supplied"
-        404:
+        "404":
           description: "Actor not found"
-        405:
+        "405":
           description: "Validation exception"
   /films/{id}:
     put:
@@ -135,11 +135,11 @@ paths:
         schema:
           $ref: "#/definitions/Film"
       responses:
-        200:
+        "200":
           description: "The film created"
           schema:
             $ref: '#/definitions/Film'
-        405:
+        "405":
           description: "Invalid input"
 definitions:
       Actor:

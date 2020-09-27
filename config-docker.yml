@@ -5,6 +5,8 @@ pyms:
     swagger:
       path: "swagger"
       file: "swagger.yaml"
+      url: "/ui/"
+      project_dir: "project.views"
     tracer:
       client: "jaeger"
       host: "localhost"
@@ -12,8 +14,8 @@ pyms:
   config:
     DEBUG: false
     TESTING: false
-    APP_NAME: Template
-    APPLICATION_ROOT : /template
+    APP_NAME: Films&Actors
+    APPLICATION_ROOT : ""
     SQLALCHEMY_TRACK_MODIFICATIONS: true
     SECRET_KEY: "gjr39dkjn344_!67#"
     DATABASE: db.sqlite3

@@ -26,7 +26,7 @@ Or innstall with pipenv
 Advantages over plain pip and requirements.txt
 ----------------------------------------------
 
-Pipenv generates two files: a `Pipfile`and a `Pipfile.lock`.
+Pipenv generates two files: a `Pipfile` and a `Pipfile.lock`.
 
 * `Pipfile`: Is a high level declaration of the dependencies of your project. It can contain "dev" dependencies
 (usually test related stuff) and "standard" dependencies which are the ones you'll need for your project to function
