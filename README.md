@@ -103,8 +103,4 @@ See a simple tutorial in [the doc](https://microservices-scaffold.readthedocs.io
     
 ## How to contrib
 
-See https://github.com/python-microservices/pyms/blob/master/CONTRIBUTING.md
-
-### Update docs
-
-   sphinx-build -b html docs/ _build
+https://github.com/python-microservices/microservices-scaffold/blob/master/CONTRIBUTING.md
