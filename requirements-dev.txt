@@ -4,3 +4,4 @@ Flask-Script==2.0.6
 py-ms[all]==2.6.1
 marshmallow==3.8.0
 marshmallow-sqlalchemy==0.23.1
+pytest-cov==2.10.1

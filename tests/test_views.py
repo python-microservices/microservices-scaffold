@@ -1,8 +1,6 @@
 import json
 import os
-import unittest
 from typing import Dict, List, Union, Text
-
 from pyms.constants import CONFIGMAP_FILE_ENVIRONMENT
 from pyms.flask.app import config
 
@@ -18,15 +16,14 @@ def _format_response(response: Text = "") -> Union[List, Dict]:
     return json.loads(response)
 
 
-class ProjectTestCase(unittest.TestCase):
+class TestProject:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-    def setUp(self):
+    def setup_method(self):
         os.environ[CONFIGMAP_FILE_ENVIRONMENT] = os.path.join(self.BASE_DIR, "config-tests.yml")
         ms = MyMicroservice(path=os.path.join(os.path.dirname(os.path.dirname(__file__)), "project", "test_views.py"))
         self.app = ms.create_app()
         self.base_url = self.app.config["APPLICATION_ROOT"]
-
         self.client = self.app.test_client()
 
     def tearDown(self):
@@ -34,18 +31,18 @@ class ProjectTestCase(unittest.TestCase):
 
     def test_home(self):
         response = self.client.get('/')
-        self.assertEqual(404, response.status_code)
+        assert 404 == response.status_code
 
     def test_healthcheck(self):
         response = self.client.get('/healthcheck')
-        self.assertEqual(200, response.status_code)
+        assert 200 == response.status_code
 
     def test_list_view(self):
         response = self.client.get('/actors'.format(base_url=self.base_url))
-        self.assertEqual(200, response.status_code)
+        assert 200 == response.status_code
 
     def test_pyms(self):
-        self.assertEqual("1234", self.app.config["TEST_VAR"])
+        assert "1234" == self.app.config["TEST_VAR"]
 
     def test_create_view(self):
         name = "Robert"
@@ -55,5 +52,6 @@ class ProjectTestCase(unittest.TestCase):
             data=json.dumps(dict(name=name, surname=surname)),
             content_type='application/json'
         )
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(name, _format_response(response.data)["name"])
+        assert 200 == response.status_code
+        assert name == _format_response(response.data)["name"]
+
