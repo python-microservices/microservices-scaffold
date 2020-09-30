@@ -33,6 +33,16 @@ pip install pipenv
 pipenv install
 ```
 
+### Install on MacOS
+```bash
+git clone git@github.com:purwowd/microservices-scaffold.git
+cd microservices-scaffold
+virtualenv -p python3 venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+python manage.py runserver
+```
+
 #### Advantages over plain pip and requirements.txt
 [Pipenv](https://pipenv.readthedocs.io/en/latest/) generates two files: a `Pipfile`and a `Pipfile.lock`.
 * `Pipfile`: Is a high level declaration of the dependencies of your project. It can contain "dev" dependencies (usually test related stuff) and "standard" dependencies which are the ones you'll need for your project to function
