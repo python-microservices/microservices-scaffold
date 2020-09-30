@@ -15,7 +15,7 @@ You have a project with this structure:
    requirements-docker.txt
    service.yaml
    setup.py
-   tests.sh
+   Makefile
    tox.ini
    project
    ├ __init__.py
