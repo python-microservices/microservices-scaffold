@@ -51,7 +51,19 @@ class ProjectTestCase(unittest.TestCase):
     def test_pyms(self):
         self.assertEqual("1234", self.app.config["TEST_VAR"])
 
-    def test_create_view(self):
+    def test_create_film(self):
+        name = "Avengers"
+        pubDate = "2020-01-20"
+        cast = [{"id": 1, "name": "Robert", "surname": "Downey Jr."}, {"id": 2, "name": "Chris", "surname": "Hemsworth"}]
+        response = self.client.post('/films'.format(
+            base_url=self.base_url),
+            data=json.dumps(dict(name=name, pubDate=pubDate, cast=cast)),
+            content_type='application/json'
+        )
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(name, _format_response(response.data)["name"])
+
+    def test_create_actor(self):
         name = "Robert"
         surname = "Downey Jr."
         response = self.client.post('/actors'.format(
