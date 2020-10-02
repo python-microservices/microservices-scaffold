@@ -39,14 +39,14 @@ class TestProject:
 
     def test_list_actors(self, microservice):
         response = microservice.client.get('/actors'.format(base_url=self.base_url))
-        self.assertEqual(200, response.status_code)
+        assert 200 == response.status_code
 
     def test_list_films(self, microservice):
         response = microservice.client.get('/films'.format(base_url=self.base_url))
-        self.assertEqual(200, response.status_code)
+        assert 200 == response.status_code
 
     def test_pyms(self):
-        self.assertEqual("1234", self.app.config["TEST_VAR"])
+        assert "1234" == self.app.config["TEST_VAR"]
 
     def test_create_film(self, microservice):
         name = "Avengers"
@@ -57,8 +57,8 @@ class TestProject:
             data=json.dumps(dict(name=name, pubDate=pubDate, cast=cast)),
             content_type='application/json'
         )
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(name, _format_response(response.data)["name"])
+        assert 200 == response.status_code
+        assert name == _format_response(response.data)["name"]
 
     def test_create_actor(self, microservice):
         response = microservice.client.get('/actors'.format(base_url=microservice.base_url))
