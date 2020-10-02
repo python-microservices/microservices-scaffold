@@ -37,7 +37,30 @@ class TestProject:
         response = microservice.client.get('/healthcheck')
         assert 200 == response.status_code
 
-    def test_list_view(self, microservice):
+    def test_list_actors(self, microservice):
+        response = microservice.client.get('/actors'.format(base_url=microservice.base_url))
+        assert 200 == response.status_code
+
+    def test_list_films(self, microservice):
+        response = microservice.client.get('/films'.format(base_url=microservice.base_url))
+        assert 200 == response.status_code
+
+    def test_pyms(self, microservice):
+        assert "1234" == microservice.app.config["TEST_VAR"]
+
+    def test_create_film(self, microservice):
+        name = "Avengers"
+        pubDate = "2020-01-20"
+        cast = [{"id": 1, "name": "Robert", "surname": "Downey Jr."}, {"id": 2, "name": "Chris", "surname": "Hemsworth"}]
+        response = microservice.client.post('/films'.format(
+            base_url=microservice.base_url),
+            data=json.dumps(dict(name=name, pubDate=pubDate, cast=cast)),
+            content_type='application/json'
+        )
+        assert 200 == response.status_code
+        assert name == _format_response(response.data)["name"]
+
+    def test_create_actor(self, microservice):
         response = microservice.client.get('/actors'.format(base_url=microservice.base_url))
         assert 200 == response.status_code
 
