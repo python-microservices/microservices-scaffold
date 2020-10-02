@@ -75,8 +75,8 @@ python manage.py runserver
 
 Your default endpoints will be in this url:
 ```bash
-http://127.0.0.1:5000/films/
-http://127.0.0.1:5000/actors/
+http://127.0.0.1:5000/films
+http://127.0.0.1:5000/actors
 ```
 
 This URL is set in your `config.yml`:
