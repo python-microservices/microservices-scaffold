@@ -38,15 +38,15 @@ class TestProject:
         assert 200 == response.status_code
 
     def test_list_actors(self, microservice):
-        response = microservice.client.get('/actors'.format(base_url=self.base_url))
+        response = microservice.client.get('/actors'.format(base_url=microservice.base_url))
         assert 200 == response.status_code
 
     def test_list_films(self, microservice):
-        response = microservice.client.get('/films'.format(base_url=self.base_url))
+        response = microservice.client.get('/films'.format(base_url=microservice.base_url))
         assert 200 == response.status_code
 
-    def test_pyms(self):
-        assert "1234" == self.app.config["TEST_VAR"]
+    def test_pyms(self, microservice):
+        assert "1234" == microservice.app.config["TEST_VAR"]
 
     def test_create_film(self, microservice):
         name = "Avengers"
