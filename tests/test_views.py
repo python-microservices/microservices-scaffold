@@ -1,5 +1,6 @@
 import json
 import os
+import pytest
 from typing import Dict, List, Union, Text
 from pyms.constants import CONFIGMAP_FILE_ENVIRONMENT
 from pyms.flask.app import config
@@ -19,39 +20,37 @@ def _format_response(response: Text = "") -> Union[List, Dict]:
 class TestProject:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-    def setup_method(self):
+    @pytest.fixture(scope="session")
+    def microservice(self):
         os.environ[CONFIGMAP_FILE_ENVIRONMENT] = os.path.join(self.BASE_DIR, "config-tests.yml")
         ms = MyMicroservice(path=os.path.join(os.path.dirname(os.path.dirname(__file__)), "project", "test_views.py"))
-        self.app = ms.create_app()
-        self.base_url = self.app.config["APPLICATION_ROOT"]
-        self.client = self.app.test_client()
+        ms.app = ms.create_app()
+        ms.base_url = ms.app.config["APPLICATION_ROOT"]
+        ms.client = ms.app.test_client()
+        return ms
 
-    def tearDown(self):
-        pass
-
-    def test_home(self):
-        response = self.client.get('/')
+    def test_home(self, microservice):
+        response = microservice.client.get('/')
         assert 404 == response.status_code
 
-    def test_healthcheck(self):
-        response = self.client.get('/healthcheck')
+    def test_healthcheck(self, microservice):
+        response = microservice.client.get('/healthcheck')
         assert 200 == response.status_code
 
-    def test_list_view(self):
-        response = self.client.get('/actors'.format(base_url=self.base_url))
+    def test_list_view(self, microservice):
+        response = microservice.client.get('/actors'.format(base_url=microservice.base_url))
         assert 200 == response.status_code
 
-    def test_pyms(self):
-        assert "1234" == self.app.config["TEST_VAR"]
+    def test_pyms(self, microservice):
+        assert "1234" == microservice.app.config["TEST_VAR"]
 
-    def test_create_view(self):
+    def test_create_view(self, microservice):
         name = "Robert"
         surname = "Downey Jr."
-        response = self.client.post('/actors'.format(
-            base_url=self.base_url),
+        response = microservice.client.post('/actors'.format(
+            base_url=microservice.base_url),
             data=json.dumps(dict(name=name, surname=surname)),
             content_type='application/json'
         )
         assert 200 == response.status_code
         assert name == _format_response(response.data)["name"]
-
