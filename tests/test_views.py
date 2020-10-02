@@ -40,8 +40,12 @@ class ProjectTestCase(unittest.TestCase):
         response = self.client.get('/healthcheck')
         self.assertEqual(200, response.status_code)
 
-    def test_list_view(self):
+    def test_list_actors(self):
         response = self.client.get('/actors'.format(base_url=self.base_url))
+        self.assertEqual(200, response.status_code)
+
+    def test_list_films(self):
+        response = self.client.get('/films'.format(base_url=self.base_url))
         self.assertEqual(200, response.status_code)
 
     def test_pyms(self):
