@@ -15,7 +15,22 @@ microservices with Python which handles cross-cutting concerns:
 [![Updates](https://pyup.io/repos/github/python-microservices/microservices-scaffold/shield.svg)](https://pyup.io/repos/github/python-microservices/microservices-scaffold/)
 [![Python 3](https://pyup.io/repos/github/python-microservices/microservices-scaffold/python-3-shield.svg)](https://pyup.io/repos/github/python-microservices/microservices-scaffold/)
 
+Table of Contents
+=================
 
+   * [microservices-scaffold](#microservices-scaffold)
+   * [How to run the scaffold](#how-to-run-the-scaffold)
+      * [Installation](#installation)
+         * [Install with virtualenv](#install-with-virtualenv)
+         * [Install with pipenv](#install-with-pipenv)
+            * [Advantages over plain pip and requirements.txt](#advantages-over-plain-pip-and-requirementstxt)
+      * [Run your python script](#run-your-python-script)
+      * [Check the result](#check-the-result)
+   * [Docker](#docker)
+   * [Kubernetes](#kubernetes)
+      * [How to contrib](#how-to-contrib)
+         * [Update docs](#update-docs)
+         
 # How to run the scaffold
 
 ## Installation
@@ -31,6 +46,16 @@ pip install -r requirements.txt
 ```bash
 pip install pipenv
 pipenv install
+```
+
+### Install on MacOS
+```bash
+git clone git@github.com:purwowd/microservices-scaffold.git
+cd microservices-scaffold
+virtualenv -p python3 venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+python manage.py runserver
 ```
 
 #### Advantages over plain pip and requirements.txt
@@ -103,8 +128,4 @@ See a simple tutorial in [the doc](https://microservices-scaffold.readthedocs.io
     
 ## How to contrib
 
-See https://github.com/python-microservices/pyms/blob/master/CONTRIBUTING.md
-
-### Update docs
-
-   sphinx-build -b html docs/ _build
+https://github.com/python-microservices/microservices-scaffold/blob/master/CONTRIBUTING.md
