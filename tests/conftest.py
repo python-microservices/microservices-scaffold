@@ -8,7 +8,7 @@ from project.models.init_db import db as _db
 
 def conf_environment():
     if not os.environ.get("CONFIGMAP_FILE", False):
-        os.environ["CONFIGMAP_FILE"] = os.path.join(os.path.dirname(os.path.abspath(__file__)), "/config_tests.yml")
+        os.environ["CONFIGMAP_FILE"] = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config-tests.yml")
 
 
 @pytest.fixture(scope="session")

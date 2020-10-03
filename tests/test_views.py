@@ -24,12 +24,12 @@ def test_healthcheck(client):
 
 
 def test_list_actors(client, base_url):
-    response = client.get('{base_url}/actors'.format(base_url=base_url))
+    response = client.get('{base_url}actors'.format(base_url=base_url))
     assert 200 == response.status_code
 
 
 def test_list_films(client, base_url):
-    response = client.get('{base_url}/films'.format(base_url=base_url))
+    response = client.get('{base_url}films'.format(base_url=base_url))
     assert 200 == response.status_code
 
 
@@ -41,7 +41,7 @@ def test_create_film(client, base_url):
     name = "Avengers"
     pubDate = "2020-01-20"
     cast = [{"id": 1, "name": "Robert", "surname": "Downey Jr."}, {"id": 2, "name": "Chris", "surname": "Hemsworth"}]
-    response = client.post('{base_url}/films'.format(
+    response = client.post('{base_url}films'.format(
         base_url=base_url),
         data=json.dumps(dict(name=name, pubDate=pubDate, cast=cast)),
         content_type='application/json'
@@ -53,7 +53,7 @@ def test_create_film(client, base_url):
 def test_create_view(client, base_url):
     name = "Robert"
     surname = "Downey Jr."
-    response = client.post('/actors'.format(
+    response = client.post('{base_url}actors'.format(
         base_url=base_url),
         data=json.dumps(dict(name=name, surname=surname)),
         content_type='application/json'
