@@ -3,7 +3,7 @@ pyms:
     requests:
       data: ""
     swagger:
-      path: "swagger"
+      path: "project/swagger"
       file: "swagger.yaml"
       url: "/ui/"
       project_dir: "project.views"
