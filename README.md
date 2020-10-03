@@ -9,6 +9,7 @@ microservices with Python which handles cross-cutting concerns:
 - Metrics
 - Distributed tracing
 
+![Python package](https://github.com/python-microservices/microservices-scaffold/workflows/Python%20package/badge.svg?branch=master)
 [![Build Status](https://travis-ci.org/python-microservices/microservices-scaffold.svg?branch=master)](https://travis-ci.org/python-microservices/microservices-scaffold)
 [![Coverage Status](https://coveralls.io/repos/github/python-microservices/microservices-scaffold/badge.svg?branch=master)](https://coveralls.io/github/python-microservices/microservices-scaffold?branch=master)
 [![Requirements Status](https://requires.io/github/python-microservices/microservices-scaffold/requirements.svg?branch=master)](https://requires.io/github/python-microservices/microservices-scaffold/requirements/?branch=master)
