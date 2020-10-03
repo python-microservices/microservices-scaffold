@@ -3,7 +3,7 @@ pyms:
     requests:
       data: ""
     swagger:
-      path: "swagger"
+      path: "project/swagger"
       file: "swagger.yaml"
       url: "/ui/"
       project_dir: "project.views"
@@ -12,11 +12,11 @@ pyms:
       host: "localhost"
       component_name: "Python Microservice"
   config:
-    DEBUG: false
+    DEBUG: true
     TESTING: false
     APP_NAME: Films&Actors
-    APPLICATION_ROOT : ""
+    APPLICATION_ROOT : "/"
     SQLALCHEMY_TRACK_MODIFICATIONS: true
     SECRET_KEY: "gjr39dkjn344_!67#"
     DATABASE: db.sqlite3
-    SQLALCHEMY_DATABASE_URI: sqlite:///db.sqlite3
+    SQLALCHEMY_DATABASE_URI: sqlite:///project/db.sqlite3

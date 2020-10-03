@@ -71,12 +71,3 @@ class MyMicroservice(Microservice):
             }
 
             logging.config.dictConfig(LOGGING)
-
-
-def create_app():
-    """Initialize the Flask app, register blueprints and intialize all libraries like Swagger, database, the trace system...
-    return the app and the database objects.
-    :return:
-    """
-    ms = MyMicroservice(path=__file__)
-    return ms.create_app()
