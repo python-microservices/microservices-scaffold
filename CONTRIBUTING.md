@@ -7,7 +7,7 @@ After cloning this repo, create a [virtualenv](https://virtualenv.pypa.io/en/sta
 ```sh
 virtualenv venv
 source venv/bin/activate
-pip install -e requirements-dev.txt
+pip install -r requirements-dev.txt
 ```
 
 Well-written tests and maintaining good test coverage is important to this project. While developing, run new and existing tests with:
