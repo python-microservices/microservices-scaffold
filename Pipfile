@@ -21,6 +21,7 @@ flake8 = "*"
 tox = "*"
 bandit = "*"
 safety = "*"
+mypy = ">=0.790"
 
 [requires]
 python_version = "3.6"
