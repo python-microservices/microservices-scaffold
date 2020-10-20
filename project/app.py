@@ -27,7 +27,7 @@ def after_cursor_execute(conn, *args, **kwargs):
 
 
 class MyMicroservice(Microservice):
-    def init_libs(self):
+    def init_libs(self) -> None:
         db.init_app(self.application)
         with self.application.test_request_context():
             db.create_all()

@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Tuple
 
 import connexion
 from flask import jsonify
@@ -9,7 +10,7 @@ from project.models.models import Film, FilmCast
 from project.serializers.serializers import FilmSchema
 
 
-def get():
+def get() -> Tuple[dict, int]:
     query = Film.query.options(
         joinedload(Film.cast),
     ).paginate(
@@ -21,11 +22,11 @@ def get():
     return jsonify(result), 200
 
 
-def search():
+def search() -> Tuple[dict, int]:
     return get()
 
 
-def post():
+def post() -> dict:
     if connexion.request.is_json:
         data = connexion.request.get_json()
         film = Film(name=data["name"], pub_date=datetime.strptime(data["pubDate"], "%Y-%m-%d").date())
@@ -42,7 +43,7 @@ def post():
     return jsonify({})
 
 
-def put(id):
+def put(id: int) -> dict:
     if connexion.request.is_json:
         data = connexion.request.get_json()
         film = Film.query.filter_by(id=id).first()
