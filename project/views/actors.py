@@ -1,5 +1,6 @@
 # encoding: utf-8
 from __future__ import absolute_import, print_function, unicode_literals
+from typing import Tuple
 
 import connexion
 from flask import jsonify
@@ -9,7 +10,7 @@ from project.models.models import Actor
 from project.serializers.serializers import ActorSchema
 
 
-def get():
+def get() -> Tuple[dict, int]:
     query = Actor.query.paginate(
         connexion.request.args.get("paginationKey", 1),
         connexion.request.args.get("pageSize", 5)
@@ -19,11 +20,11 @@ def get():
     return jsonify(result), 200
 
 
-def search():
+def search() -> Tuple[dict, int]:
     return get()
 
 
-def post():
+def post() -> dict:
     if connexion.request.is_json:
         data = connexion.request.get_json()
         actor = Actor(name=data["name"], surname=data["surname"])
