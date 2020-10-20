@@ -5,14 +5,14 @@ import os
 
 from setuptools import setup, find_packages
 
-version = __import__('project').__version__
-author = __import__('project').__author__
-author_email = __import__('project').__email__
+version = __import__("project").__version__
+author = __import__("project").__author__
+author_email = __import__("project").__email__
 
-if os.path.exists('README.rst'):
-    long_description = codecs.open('README.rst', 'r', 'utf-8').read()
+if os.path.exists("README.rst"):
+    long_description = codecs.open("README.rst", "r", "utf-8").read()
 else:
-    long_description = 'https://github.com/python-microservices/microservices-scaffold'
+    long_description = "https://github.com/python-microservices/microservices-scaffold"
 
 setup(
     name="MS-Scaffold",
@@ -31,17 +31,27 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6"
+        "Programming Language :: Python :: 3.6",
     ],
-    python_requires='>=3.5',
+    python_requires=">=3.5",
     license="GPLv3",
     platforms=["any"],
     keywords="python, microservices",
-    url='https://github.com/python-microservices/microservices-scaffold',
+    url="https://github.com/python-microservices/microservices-scaffold",
     packages=find_packages(
-        exclude=['*.tests', '*.tests.*', 'tests.*', 'tests', '*.examples', '*.examples.*', 'examples.*', 'examples']),
+        exclude=[
+            "*.tests",
+            "*.tests.*",
+            "tests.*",
+            "tests",
+            "*.examples",
+            "*.examples.*",
+            "examples.*",
+            "examples",
+        ]
+    ),
     setup_requires=[
-        'pytest-runner>=2.0,<3dev',
+        "pytest-runner>=2.0,<3dev",
     ],
     include_package_data=True,
 )
