@@ -1,4 +1,4 @@
-export CONFIGMAP_FILE=tests/config-tests.yml
+export PYMS_CONFIGMAP_FILE=tests/config-tests.yml
 
 default: all
 

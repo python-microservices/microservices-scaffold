@@ -30,7 +30,7 @@ spec:
             - name: http
               containerPort: 5000
           env:
-            - name: CONFIGMAP_FILE
+            - name: PYMS_CONFIGMAP_FILE
               value: "/usr/share/microservice/config.yaml"
           volumeMounts:
             - mountPath: /usr/share/microservice
