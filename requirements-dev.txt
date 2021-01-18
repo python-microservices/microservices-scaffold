@@ -2,7 +2,7 @@
 tox==3.21.1
 coverage==5.3.1
 pylint==2.6.0
-pytest-cov==2.10.1
+pytest-cov==2.11.0
 pylint==2.6.0
 pre-commit==2.9.0
 black==20.8b1
