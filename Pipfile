@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Flask-SQLAlchemy = "==2.4.4"
+Flask-SQLAlchemy = "==2.5.1"
 SQLAlchemy = "==1.4.3"
 Flask-Script = "==2.0.6"
 py-ms = {extras = ["all"],version = "==2.7.0"}
