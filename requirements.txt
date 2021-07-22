@@ -1,5 +1,5 @@
 Flask-SQLAlchemy==2.5.1
-SQLAlchemy==1.4.3
+SQLAlchemy==1.4.22
 Flask-Script==2.0.6
 py-ms[all]==2.8.0
 marshmallow==3.10.0
