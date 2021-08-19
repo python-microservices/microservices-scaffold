@@ -1,5 +1,5 @@
 -r requirements.txt
-tox==3.23.0
+tox==3.24.2
 coverage==5.5
 pylint==2.7.3
 pytest-cov==2.11.1
