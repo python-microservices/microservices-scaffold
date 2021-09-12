@@ -194,9 +194,9 @@ future==0.18.2; python_version >= "2.6" and python_full_version < "3.0.0" or pyt
 gitdb==4.0.7; python_version >= "3.6" \
     --hash=sha256:6c4cc71933456991da20917998acbe6cf4fb41eeaab7d6d67fbc05ecd4c865b0 \
     --hash=sha256:96bf5c08b157a666fec41129e6d327235284cca4c81e92109260f353ba138005
-gitpython==3.1.20; python_version >= "3.6" \
-    --hash=sha256:b1e1c269deab1b08ce65403cf14e10d2ef1f6c89e33ea7c5e5bb0222ea593b8a \
-    --hash=sha256:df0e072a200703a65387b0cfdf0466e3bab729c0458cf6b7349d0e9877636519
+gitpython==3.1.23; python_version >= "3.6" \
+    --hash=sha256:aaae7a3bfdf0a6db30dc1f3aeae47b71cd326d86b936fe2e158aa925fdf1471c \
+    --hash=sha256:de2e2aff068097b23d6dca5daf588078fd8996a4218f6ffa704a662c2b54f9ac
 greenlet==1.1.1; python_version >= "3" and python_full_version < "3.0.0" and platform_machine in "x86_64 X86_64 aarch64 AARCH64 ppc64le PPC64LE amd64 AMD64 win32 WIN32" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0") or python_version >= "3" and platform_machine in "x86_64 X86_64 aarch64 AARCH64 ppc64le PPC64LE amd64 AMD64 win32 WIN32" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0") and python_full_version >= "3.5.0" \
     --hash=sha256:476ba9435afaead4382fbab8f1882f75e3fb2285c35c9285abb3dd30237f9142 \
     --hash=sha256:44556302c0ab376e37939fd0058e1f0db2e769580d340fb03b01678d1ff25f68 \
