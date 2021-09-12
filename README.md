@@ -20,7 +20,33 @@ microservices with Python which handles cross-cutting concerns:
 
 ## Quickstart
 
+We recommended use [Poetry](https://python-poetry.org/docs/) to install the dependencies
+
+Start with poetry
+```shell
+pip install --user poetry
+poetry update
+poetry run python manage.py runserver
+```
+
+Start with a virtualenv
+```shell
+pip install -r requirements.txt
+python manage.py runserver
+```
+
+
+Open `http://127.0.0.1:5000/ui/` and play with swagger
+
 See our [quickstart webpage](https://python-microservices.github.io/scaffold/quickstart/)
+
+# Dependencies
+
+Updated dependencies in a requirements.txt with:
+
+```shell
+poetry export --dev -f requirements.txt --output requirements.txt
+```
 
 # How To contribute
 

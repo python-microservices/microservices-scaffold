@@ -1,3 +1,57 @@
+[tool.poetry]
+name = "MS-Scaffold"
+version = "2.3.0"
+description = "Python Miscroservice barebone"
+readme = "README.md"
+homepage = "https://python-microservices.github.io/"
+documentation = "https://python-microservices.github.io/"
+repository = "https://github.com/python-microservices/microservices-scaffold"
+license = "GPL-3.0-only"
+authors = ["avara1986 <a.vara.1986@gmail.com>"]
+classifiers = [
+    "Development Status :: 6 - Mature",
+    "Framework :: Flask",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.6.2,<4.0"
+Flask-SQLAlchemy = "==2.5.1"
+SQLAlchemy = "==1.4.23"
+py-ms = {extras = ["all"], version = "==2.8.0"}
+marshmallow = "==3.13.0"
+marshmallow-sqlalchemy = ">=0.26.1"
+importlib-metadata = "==2.1.1"
+cryptography = "<3.4.8"
+
+[tool.poetry.dev-dependencies]
+requests-mock = "^1.9.3"
+coverage = ">=5.5"
+pytest = ">=5.4.3"
+pytest-cov = ">=2.12.1"
+pylint = ">=2.10.2"
+flake8 = "*"
+tox = ">=3.24.3"
+bandit = "*"
+safety = "*"
+pre-commit = ">=2.15.0"
+black = ">=21.8b0"
+mypy = ">=0.790"
+
 [tool.black]
 line-length = 120
 include = '\.pyi?$'
