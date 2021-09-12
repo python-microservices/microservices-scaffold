@@ -1,16 +1,16 @@
 from marshmallow import fields
-from marshmallow_sqlalchemy import ModelSchema
+from marshmallow_sqlalchemy import SQLAlchemySchema
 
 from project.models.models import Film, Actor
 
 
-class ActorSchema(ModelSchema):
+class ActorSchema(SQLAlchemySchema):
     class Meta:
         model = Actor
         fields = ('id', 'name', 'surname')
 
 
-class FilmSchema(ModelSchema):
+class FilmSchema(SQLAlchemySchema):
     cast = fields.Nested(ActorSchema, many=True)
     pubDate = fields.String(required=True, data_key='pub_date', attribute="pub_date")
 
