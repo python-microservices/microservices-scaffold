@@ -26,13 +26,13 @@ Start with poetry
 ```shell
 pip install --user poetry
 poetry update
-poetry run python manage.py runserver
+poetry run python manage.py
 ```
 
 Start with a virtualenv
 ```shell
 pip install -r requirements.txt
-python manage.py runserver
+python manage.py
 ```
 
 
