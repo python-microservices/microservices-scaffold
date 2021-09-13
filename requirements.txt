@@ -650,9 +650,9 @@ sqlalchemy==1.4.23; (python_version >= "2.7" and python_full_version < "3.0.0") 
 stevedore==3.4.0; python_version >= "3.6" \
     --hash=sha256:920ce6259f0b2498aaa4545989536a27e4e4607b8318802d7ddc3a533d3d069e \
     --hash=sha256:59b58edb7f57b11897f150475e7bc0c39c5381f0b8e3fa9f5c20ce6c89ec4aa1
-swagger-ui-bundle==0.0.8 \
-    --hash=sha256:f5255f786cde67a2638111f4a7d04355836743198a83c4ecbe815d9fc384b0c8 \
-    --hash=sha256:f5691167f2e9f73ecbe8229a89454ae5ea958f90bb0d4583ed7adaae598c4122
+swagger-ui-bundle==0.0.9 \
+    --hash=sha256:b462aa1460261796ab78fd4663961a7f6f347ce01760f1303bbbdf630f11f516 \
+    --hash=sha256:cea116ed81147c345001027325c1ddc9ca78c1ee7319935c3c75d3669279d575
 threadloop==1.0.2; python_version >= "3.5" \
     --hash=sha256:5c90dbefab6ffbdba26afb4829d2a9df8275d13ac7dc58dccb0e279992679599 \
     --hash=sha256:8b180aac31013de13c2ad5c834819771992d350267bddb854613ae77ef571944
