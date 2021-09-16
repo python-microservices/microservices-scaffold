@@ -672,9 +672,9 @@ tornado==5.1.1; python_version >= "3.5" and python_full_version < "3.0.0" or pyt
     --hash=sha256:e5f2585afccbff22390cddac29849df463b252b711aa2ce7c5f3f342a5b3b444 \
     --hash=sha256:8e9d728c4579682e837c92fdd98036bd5cdefa1da2aaf6acf26947e6dd0c01c5 \
     --hash=sha256:4e5158d97583502a7e2739951553cbd88a72076f152b4b11b64b9a10c4c49409
-tox==3.24.3; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0") \
-    --hash=sha256:9fbf8e2ab758b2a5e7cb2c72945e4728089934853076f67ef18d7575c8ab6b88 \
-    --hash=sha256:c6c4e77705ada004283610fd6d9ba4f77bc85d235447f875df9f0ba1bc23b634
+tox==3.24.4; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0") \
+    --hash=sha256:5e274227a53dc9ef856767c21867377ba395992549f02ce55eb549f9fb9a8d10 \
+    --hash=sha256:c30b57fa2477f1fb7c36aa1d83292d5c2336cd0018119e1b1c17340e2c2708ca
 typed-ast==1.4.3; python_version < "3.8" and python_full_version >= "3.6.2" and python_version >= "3.6" and implementation_name == "cpython" \
     --hash=sha256:2068531575a125b87a41802130fa7e29f26c09a2833fea68d9a40cf33902eba6 \
     --hash=sha256:c907f561b1e83e93fad565bac5ba9c22d96a54e7ea0267c708bffe863cbe4075 \
