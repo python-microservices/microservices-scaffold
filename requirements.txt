@@ -22,9 +22,9 @@ black==21.8b0; python_full_version >= "3.6.2" \
 boto3==1.18.40; python_version >= "3.6" \
     --hash=sha256:5c4ba83223465e25b4e0262b286c306920dde8fe0634566f8251b609125ab837 \
     --hash=sha256:f04a2d07b2c25135f302a40819be02ef74599829fab0f16126da4f2ff7df91f9
-botocore==1.21.40; python_version >= "3.6" \
-    --hash=sha256:b31aa5060d54097b519a62ced4b8a69439ceecccc65cac089130cb5bae810b83 \
-    --hash=sha256:95efb127e9149f7a6b12b116cb1e65c11e36bf6d588ac877b2b51a3c9bbcf22a
+botocore==1.21.43; python_version >= "3.6" \
+    --hash=sha256:b74d0a5fe0f7b73fa4b5670eaa9ff456b0bce70966d478dcd631c91458916eb6 \
+    --hash=sha256:de7bf9c9098578d386b785b5b6eab954acccd3f79fe3e2eb971da608c967082b
 certifi==2021.5.30; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" \
     --hash=sha256:50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8 \
     --hash=sha256:2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee
