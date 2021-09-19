@@ -1,6 +1,6 @@
-anyconfig==0.11.1 \
-    --hash=sha256:112000d4d407722569ecff5126c1fc88715581834cfd0ee9556386fd8ff2983e \
-    --hash=sha256:050dcade09799cd19c9b1f834e6df710ef824b388e6bb0af8c77be39b158b011
+anyconfig==0.12.0 \
+    --hash=sha256:2119065ad835d0e4cbcb26a58fab0705952c5657c05fa90ef7a11cdecbbafb1f \
+    --hash=sha256:3091d7675740686fade85755537f2a7c6ccefa8659c5bb56174e02ded74b96d5
 astroid==2.7.3; python_version >= "3.6" and python_version < "4.0" \
     --hash=sha256:dc1e8b28427d6bbef6b8842b18765ab58f558c42bb80540bd7648c98412af25e \
     --hash=sha256:3b680ce0419b8a771aba6190139a3998d14b413852506d99aff8dc2bf65ee67c
