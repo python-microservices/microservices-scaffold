@@ -248,9 +248,9 @@ greenlet==1.1.1; python_version >= "3" and python_full_version < "3.0.0" and pla
     --hash=sha256:1796f2c283faab2b71c67e9b9aefb3f201fdfbee5cb55001f5ffce9125f63a45 \
     --hash=sha256:4adaf53ace289ced90797d92d767d37e7cdc29f13bd3830c3f0a561277a4ae83 \
     --hash=sha256:c0f22774cd8294078bdf7392ac73cf00bfa1e5e0ed644bd064fdabc5f2a2f481
-identify==2.2.14; python_full_version >= "3.6.1" \
-    --hash=sha256:113a76a6ba614d2a3dd408b3504446bcfac0370da5995aa6a17fd7c6dffde02d \
-    --hash=sha256:32f465f3c48083f345ad29a9df8419a4ce0674bf4a8c3245191d65c83634bdbf
+identify==2.2.15; python_full_version >= "3.6.1" \
+    --hash=sha256:528a88021749035d5a39fe2ba67c0642b8341aaf71889da0e1ed669a429b87f0 \
+    --hash=sha256:de83a84d774921669774a2000bf87ebba46b4d1c04775f4a5d37deff0cf39f73
 idna==3.2; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.5" \
     --hash=sha256:14475042e284991034cb48e06f6851428fb14c4dc953acd9be9a5e95c7b6dd7a \
     --hash=sha256:467fbad99067910785144ce333826c71fb0e63a425657295239737f7ecd125f3
