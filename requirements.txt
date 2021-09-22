@@ -169,9 +169,9 @@ cryptography==3.4.7; python_version >= "3.6" \
 dataclasses==0.8; python_version >= "3.6" and python_version < "3.7" and python_full_version >= "3.6.2" and (python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.4.0" and python_version >= "3.6" and python_version < "3.7") \
     --hash=sha256:0201d89fa866f68c8ebd9d08ee6ff50c0b255f8ec63a71c16fda7af82bb887bf \
     --hash=sha256:8479067f342acf957dc82ec415d355ab5edb7e7646b90dc6e2fd1d96ad084c97
-distlib==0.3.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" \
-    --hash=sha256:23e223426b28491b1ced97dc3bbe183027419dfc7982b4fa2f05d5f3ff10711c \
-    --hash=sha256:106fef6dc37dd8c0e2c0a60d3fca3e77460a48907f335fa28420463a6f799736
+distlib==0.3.3; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" \
+    --hash=sha256:c8b54e8454e5bf6237cc84c20e8264c3e991e824ef27e8f1e81049867d861e31 \
+    --hash=sha256:d982d0751ff6eaaab5e2ec8e691d949ee80eddf01a62eaa96ddb11531fe16b05
 dparse==0.5.1; python_version >= "3.5" \
     --hash=sha256:e953a25e44ebb60a5c6efc2add4420c177f1d8404509da88da9729202f306994 \
     --hash=sha256:a1b5f169102e1c894f9a7d5ccf6f9402a836a5d24be80a986c7ce9eaed78f367
