@@ -656,8 +656,8 @@ swagger-ui-bundle==0.0.8 \
 threadloop==1.0.2; python_version >= "3.5" \
     --hash=sha256:5c90dbefab6ffbdba26afb4829d2a9df8275d13ac7dc58dccb0e279992679599 \
     --hash=sha256:8b180aac31013de13c2ad5c834819771992d350267bddb854613ae77ef571944
-thrift==0.13.0; python_version >= "3.5" \
-    --hash=sha256:9af1c86bf73433afc6010ed376a6c6aca2b54099cc0d61895f640870a9ae7d89
+thrift==0.15.0; python_version >= "3.5" \
+    --hash=sha256:87c8205a71cf8bbb111cb99b1f7495070fbc9cabb671669568854210da5b3e29
 toml==0.10.2; python_full_version >= "3.6.1" and python_version >= "3.6" and python_version < "4.0" and (python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.5") and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6") \
     --hash=sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b \
     --hash=sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f
