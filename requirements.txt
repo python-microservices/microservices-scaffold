@@ -19,9 +19,9 @@ bandit==1.7.0; python_version >= "3.5" \
 black==21.8b0; python_full_version >= "3.6.2" \
     --hash=sha256:2a0f9a8c2b2a60dbcf1ccb058842fb22bdbbcb2f32c6cc02d9578f90b92ce8b7 \
     --hash=sha256:570608d28aa3af1792b98c4a337dbac6367877b47b12b88ab42095cfc1a627c2
-boto3==1.18.40; python_version >= "3.6" \
-    --hash=sha256:5c4ba83223465e25b4e0262b286c306920dde8fe0634566f8251b609125ab837 \
-    --hash=sha256:f04a2d07b2c25135f302a40819be02ef74599829fab0f16126da4f2ff7df91f9
+boto3==1.18.62; python_version >= "3.6" \
+    --hash=sha256:2ea8e74678af768343bfc005590d41e162ce8dda9320542dc93f707588df049c \
+    --hash=sha256:364a0fd497147ff0e15327f653223b05e60a1afce002995e5b1106084355352e
 botocore==1.21.40; python_version >= "3.6" \
     --hash=sha256:b31aa5060d54097b519a62ced4b8a69439ceecccc65cac089130cb5bae810b83 \
     --hash=sha256:95efb127e9149f7a6b12b116cb1e65c11e36bf6d588ac877b2b51a3c9bbcf22a
