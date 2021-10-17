@@ -367,9 +367,9 @@ markupsafe==2.0.1; python_version >= "3.6" and python_full_version < "3.0.0" or 
 marshmallow-sqlalchemy==0.26.1; python_version >= "3.6" \
     --hash=sha256:d8525f74de51554b5c8491effe036f60629a426229befa33ff614c8569a16a73 \
     --hash=sha256:ba7493eeb8669a3bf00d8f906b657feaa87a740ae9e4ecf829cfd6ddf763d276
-marshmallow==3.13.0; python_version >= "3.5" \
-    --hash=sha256:dd4724335d3c2b870b641ffe4a2f8728a1380cd2e7e2312756715ffeaa82b842 \
-    --hash=sha256:c67929438fd73a2be92128caa0325b1b5ed8b626d91a094d2f7f2771bf1f1c0e
+marshmallow==3.14.0; python_version >= "3.5" \
+    --hash=sha256:6d00e42d6d6289f8cd3e77618a01689d57a078fe324ee579b00fa206d32e9b07 \
+    --hash=sha256:bba1a940985c052c5cc7849f97da196ebc81f3b85ec10c56ef1f3228aa9cbe74
 mccabe==0.6.1; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") \
     --hash=sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42 \
     --hash=sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f
